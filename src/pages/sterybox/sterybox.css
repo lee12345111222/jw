@@ -1,0 +1,100 @@
+.p20 {
+    padding: 20px;
+}
+
+.content {
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+.szxfontjbtow {
+    font-family: 'Proto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+
+    background: linear-gradient(122.67deg, #6DC7E0 26.87%, #3BAAC6 73.58%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.szxfontjb {
+    opacity: 1 !important;
+    height: 60px;
+
+    color: #FCFF57;
+
+    background: #FFBC00;
+    font-weight: 900;
+    font-size: 16px;
+    font-family: 'Proto Sans';
+    font-weight: 400;
+
+    text-shadow: 0px 1.51456px 1.51456px rgba(0, 0, 0, 0.25);
+
+    background-image: -webkit-linear-gradient(106.47deg, #FCFF57 -10.54%, #FFDB1F 116.77%);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    -webkit-animation: hue6sinfinitelinear;
+
+}
+
+.suizhh1 {
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    background: linear-gradient(90deg, #E441FF 0%, #6077EE 19.25%, #06C4FF 114.61%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.toprightbox {
+    width: 204px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 500;
+    background: rgba(74, 80, 87, 0.2);
+    border-radius: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.wwwsuzix table {
+    /* opacity: 0.65; */
+}
+
+.szxwai {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.underline:hover {
+    text-decoration: underline;
+}
+
+.wwwsuzix tbody tr:not(:last-child), .wwwsuzix thead tr{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+

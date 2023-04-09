@@ -1,0 +1,20 @@
+.ant-select-dropdown {
+  background-color: #3b3b3b;
+  box-shadow: none;
+}
+
+.ant-select-item-option {
+  background-color: #3b3b3b;
+  min-height: 22px;
+  height: 22px;
+  font-size: 12px;
+  padding: 0 12px;
+}
+
+.ant-select-item-option-selected {
+  background-color: #454545 !important;
+}
+
+.ant-select-item-option-active {
+  background-color: #454545 !important;
+}

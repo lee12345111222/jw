@@ -1,0 +1,1015 @@
+import {
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+  useRef,
+  lazy,
+  Suspense
+} from 'react';
+
+import { server } from '@/constant/env/index';
+
+import { useWallet } from 'use-wallet';
+import useLoginToken from '@/hooks/useLoginToken';
+
+import { useParams, useHistory } from 'react-router-dom';
+
+import { useTranslation } from 'react-i18next';
+
+import { Modal, Input, message, Tabs, Spin } from 'antd';
+import { useLocalStorageState } from 'ahooks';
+import { LoadingOutlined } from '@ant-design/icons';
+
+import styled from 'styled-components';
+import { LandCard, LandList } from '@/components/LandCard';
+import { Flex, Grid, Icon } from '@/components/Basic';
+import NoData from '@/components/NoData';
+import MainPage from '@/components/MainPage/index';
+import { StyledTabbar } from '@/components/StyledTabbar';
+import { Title, Selection, Btn } from '@/components/BasicComponents';
+import Image from '@/components/Image';
+
+import { Page, ActionSheet } from './StyledComponents';
+import Voxel from './tabs/Voxel';
+
+import { jsonData } from '@/api/map';
+import {
+  getSpaceList,
+  dropSpace,
+  create,
+  copySpace,
+  setLandInfo,
+  myParcels,
+  buildingTemp
+} from '@/api/user';
+import { upFile } from '@/api/file';
+
+import './create.css';
+
+import createTemp from '@/assets/img/create-temp.png';
+import GoodImg from '@/assets/good2.png';
+
+import load from '@/utils/load';
+
+const VoxelPart = lazy(() => import('./tabs/VoxelPart'));
+
+const {
+  union,
+  edit: star,
+  copy2,
+  download,
+  delete: del,
+  add,
+  upload,
+  edit: addPic,
+  land_down: landDown,
+  bitcoin: landSell,
+  drag
+} = load('icon');
+
+const { TabPane } = Tabs;
+
+export default function Market() {
+  const [spinLoading, setSpinLoading] = useState(false);
+
+  const fileInput = useRef(null);
+
+  const { account } = useWallet();
+
+  const [activeKey, setActiveKey] = useState('1');
+
+  const [goodList, setGoodList] = useState([]);
+
+  const { t } = useTranslation();
+
+  const [sort, setSort] = useState();
+  const [landSort, setLandSort] = useState();
+
+  const [
+    ,
+    // landData
+    setLandData
+  ] = useState([]);
+
+  const [name, setName] = useState('');
+  const [size, setSize] = useState([4, 4, 4]);
+
+  const [uploadedImg, setUploadedImg] = useState(null);
+  const [imageName, setImageName] = useState(null);
+  const [imgData, setImgData] = useState(null);
+
+  // const [isPreloadStart, setIsPreloadStart] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+
+  const [assets, setAssets] = useState([]);
+
+  const [selectedSize, setSelectedSize] = useState([0, 0]);
+
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [tempList, setTempList] = useState([]);
+
+  const [showNomore, setShowNomore] = useState(false);
+  const [showNomore2, setShowNomore2] = useState(false);
+
+  const { tab } = useParams();
+  const history = useHistory();
+
+  const tabList = useMemo(
+    () => ['', 'space', 'land', 'voxel', 'voxelpart', 'name'],
+    []
+  );
+
+  useEffect(() => {
+    const i = tabList.findIndex((t) => t === tab);
+    if (i <= 4) {
+      setActiveKey(i.toString());
+    } else {
+      message.info(t('app.message.not_open'));
+      history.goBack();
+    }
+  }, [tab, tabList, history, t]);
+
+  const checkClick = useCallback(
+    (i) => {
+      history.push(`/create/${tabList[i]}`);
+    },
+    [history, tabList]
+  );
+
+  useEffect(() => {
+    setSort(t('create.new'));
+    setLandSort(t('create.new'));
+  }, [t]);
+
+  useEffect(() => {
+    jsonData().then((res) => setLandData(res));
+  }, []);
+
+  useEffect(() => {
+    const getTemp = async () => {
+      const res = await buildingTemp();
+      if (res?.code === 200) {
+        setTempList(res.data.list);
+      }
+    };
+    getTemp();
+  }, []);
+
+  useEffect(() => {
+    if (!account) return;
+
+    myParcels(account).then((res) => {
+      if (res?.code === 200) {
+        setAssets(res?.data?.parcels);
+
+        if (res.data.parcels.length === 0) {
+          setShowNomore2(true);
+        } else {
+          setShowNomore2(false);
+        }
+      }
+    });
+  }, [account]);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isEditVisible, setIsEditVisible] = useState(false);
+
+  const handleChangeName = useCallback((val) => {
+    setName(val.target.value);
+  }, []);
+
+  const handleSizeSelect = useCallback((val) => {
+    setSize(val.split(' × '));
+    setSelectedItem(null);
+  }, []);
+
+  const sortedGoodList = useMemo(() => {
+    if (sort === t('create.new')) {
+      return goodList.sort((a, b) => b.created_at - a.created_at);
+    }
+    if (sort === t('create.size')) {
+      return goodList.sort(
+        (a, b) => b.height * b.long * b.width - a.height * a.long * a.width
+      );
+    }
+  }, [goodList, sort, t]);
+
+  const getGoodList = useCallback(() => {
+    const getList = async () => {
+      if (!account) {
+        setShowNomore(true);
+        setGoodList([]);
+        return;
+      }
+
+      setSpinLoading(true);
+      const sl = await getSpaceList(account);
+      setSpinLoading(false);
+      setGoodList(sl);
+
+      if (sl.length === 0) {
+        setShowNomore(true);
+      } else {
+        setShowNomore(false);
+      }
+    };
+    getList();
+  }, [account]);
+
+  const [getToken] = useLoginToken();
+
+  const getLoginToken = useCallback(async () => {
+    if (!account) {
+      return;
+    }
+    const token = await getToken();
+    return token;
+  }, [account, getToken]);
+
+  // const [token, setToken] = useState();
+
+  // useEffect(() => {
+  //   if (!account) {
+  //     return;
+  //   }
+  //   getToken().then((res) => setToken(res));
+  // }, [account, getToken]);
+
+  const GoodList = useMemo(
+    () =>
+      sortedGoodList?.map((good, index) => (
+        <GoodCard
+          onDrop={getGoodList}
+          onCopy={(val) => setSpinLoading(val)}
+          good={good}
+          key={index}
+          token={getLoginToken}
+          account={account}
+        />
+      )),
+    [account, getGoodList, getLoginToken, sortedGoodList]
+  );
+
+  useEffect(() => {
+    getGoodList();
+  }, [getGoodList]);
+
+  const createSpace = async () => {
+    if (!name) return message.error(t('app.message.space_name_needed'));
+    if (!size || typeof size === 'string')
+      return message.error(t('app.message.space_size_needed'));
+
+    const myToken = await getLoginToken();
+    if (!myToken) return;
+    const res = await create({
+      name,
+      long: size[1],
+      width: size[0],
+      height: size[2],
+      template_id: selectedItem,
+      login_token: myToken,
+      address: account
+    });
+    if (res.code === 200) {
+      setIsModalVisible(false);
+      getGoodList();
+    }
+  };
+
+  const dropFile = useCallback(
+    (e) => {
+      e.stopPropagation();
+
+      const files = e.target?.files || e?.dataTransfer.files;
+      const file = files[0];
+      if (file.type !== 'image/png' && file.type !== 'image/jpeg') {
+        return message.error(t('app.message.wrong_file_type'));
+      }
+      setUploadedImg(file);
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (e) => setImgData(e.target.result);
+    },
+    [t]
+  );
+
+  const sellLand = useCallback(() => {
+    Modal.confirm({
+      content: t('app.message.are_you_sure'),
+      async onOk() {
+        window.open('');
+      }
+    });
+  }, [t]);
+
+  const landList = useMemo(
+    () =>
+      assets
+        .sort((l1, l2) => {
+          return landSort === t('create.size')
+            ? (l2.x2 - l2.x1) * (l2.y2 - l2.y1) * (l2.z2 - l2.z1) -
+                (l1.x2 - l1.x1) * (l1.y2 - l1.y1) * (l1.z2 - l1.z1)
+            : l2.token_id - l1.token_id;
+        })
+        .map((l, i) => {
+          return (
+            <LandCard
+              key={i}
+              name={l.custom_name}
+              size={[l.x2 - l.x1, l.y2 - l.y1, l.z2 - l.z1]}
+              coord={[l.x1, l.y1]}
+              src={l.image || GoodImg}
+              area={l.suburb}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '32px'
+                }}
+              >
+                <img
+                  src={addPic}
+                  width="21px"
+                  style={{ cursor: 'pointer' }}
+                  alt=""
+                  onClick={() => {
+                    setSelectedSize([l.x2 - l.x1, l.y2 - l.y1]);
+                    setIsEditVisible(true);
+                  }}
+                />
+                <img
+                  onClick={() => t('app.message.coming2')}
+                  src={landDown}
+                  width="21px"
+                  style={{ cursor: 'pointer' }}
+                  alt=""
+                />
+                <img
+                  onClick={() => sellLand(l.token_id)}
+                  src={landSell}
+                  width="21px"
+                  style={{ cursor: 'pointer' }}
+                  alt=""
+                />
+              </div>
+            </LandCard>
+          );
+        }),
+    [assets, landSort, sellLand, t]
+  );
+
+  // useEffect(() => {
+  //   if (isPreloadStart || goodList.length === 0 || landData.length === 1)
+  //     return;
+
+  //   const link1 = document.createElement('link');
+  //   const link2 = document.createElement('link');
+  //   const link3 = document.createElement('link');
+  //   link1.setAttribute('rel', 'prefetch');
+  //   link2.setAttribute('rel', 'prefetch');
+  //   link3.setAttribute('rel', 'prefetch');
+  //   link1.setAttribute(
+  //     'href',
+  //     '/editor_static/PlayerOneEditor.framework.js.unityweb'
+  //   );
+  //   link2.setAttribute('href', '/editor_static/PlayerOneEditor.data.unityweb');
+  //   link3.setAttribute('href', '/editor_static/PlayerOneEditor.wasm.unityweb');
+
+  //   document.head.appendChild(link1);
+  //   document.head.appendChild(link2);
+  //   document.head.appendChild(link3);
+
+  //   setIsPreloadStart(true);
+  // }, [goodList, landData, isPreloadStart]);
+
+  const unloadImage = useCallback(async () => {
+    if (!uploadedImg) return message.info(t('app.message.image_needed'));
+    if (!imageName) return message.info(t('app.message.space_name_needed'));
+
+    const formData = new FormData();
+
+    formData.append('upfile', uploadedImg);
+
+    formData.append();
+
+    setLoading(true);
+    const res = await upFile(formData);
+
+    if (res?.code !== 200) {
+      message.error(t('app.message.upload_fail'));
+      return setLoading(false);
+    }
+
+    const resp = await setLandInfo({
+      custom_img: res.data.location,
+      custom_name: imageName
+    });
+
+    myParcels(account).then((res) => {
+      if (res?.code === 200) {
+        setAssets(res.data.parcels);
+      }
+    });
+
+    if (resp?.code !== 200) {
+      message.error(t('app.message.save_fails'));
+      return setLoading(false);
+    }
+
+    // setUploadedImg(null);
+
+    message.success(t('app.message.save_success'));
+    setLoading(false);
+    setIsEditVisible(false);
+  }, [uploadedImg, t, imageName, account]);
+
+  const Footer = useMemo(
+    () => (
+      <div
+        style={{
+          display: 'flex',
+          gap: '16px',
+          width: '100%'
+        }}
+      >
+        <Btn
+          loading={true}
+          onClick={unloadImage}
+          style={{ height: '26px', width: '50%' }}
+        >
+          {t('create.confirm')}
+          <LoadingOutlined style={{ display: !loading ? 'none' : 'block' }} />
+        </Btn>
+        <Btn
+          key="back"
+          onClick={() => setIsEditVisible(false)}
+          style={{
+            height: '26px',
+            background: '#1a2026',
+            border: '#06C4FF',
+            width: '50%'
+          }}
+        >
+          {t('create.cancel')}
+        </Btn>
+      </div>
+    ),
+    [unloadImage, loading, t]
+  );
+
+  const resetUpload = useCallback(() => {
+    setUploadedImg(null);
+    setImgData(null);
+  }, []);
+
+  const selectItem = useCallback(
+    (id) => {
+      if (id === selectedItem) {
+        setSelectedItem(null);
+      } else {
+        setSelectedItem(id);
+      }
+    },
+    [selectedItem]
+  );
+
+  const getBgColor = useCallback(
+    (id) => {
+      return id === selectedItem ? '2px dashed #85c3fa' : 'none';
+      // return undefined;
+    },
+    [selectedItem]
+  );
+
+  const filteredTemp = useMemo(() => {
+    if (!size || typeof size === 'string') return null;
+    return tempList
+      .filter((t) => t.size === `${size[0]}x${size[1]}x${size[1]}`)
+      .map((t) => (
+        <TempItem key={t.id} onClick={() => selectItem(t.id)}>
+          <img src={t?.head_img || createTemp} alt="" />
+          <div style={{ margin: '8px 10px' }}>
+            <TempInfo>
+              <div>{t.name}</div>
+              <div>{t.frame_amount} frames</div>
+            </TempInfo>
+            <TempInfo
+              style={{ fontSize: '12px', color: 'rgba(255, 255, 255, .65)' }}
+            >
+              <div>By @{t.author}</div>
+              <div>{+t.price === 0 ? 'Free to use' : t.price}</div>
+            </TempInfo>
+          </div>
+          <ItemCover
+            style={{
+              border: getBgColor(t.id)
+            }}
+          />
+        </TempItem>
+      ));
+  }, [size, tempList, getBgColor, selectItem]);
+
+  return (
+    <MainPage title={t('create.title')}>
+      <Page fd="column">
+        <StyledTabbar
+          tabBarGutter="56px"
+          onTabClick={checkClick}
+          activeKey={activeKey}
+        >
+          <TabPane tab={t('create.space')} key="1">
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%'
+              }}
+            >
+              <StatusBar
+                onOpenAdd={() => setIsModalVisible(true)}
+                onChange={(val) => setSort(val)}
+                count={goodList.length}
+              />
+              <div
+                style={{
+                  padding: '24px',
+                  overflowY: 'auto',
+                  boxSizing: 'border-box',
+                  flexGrow: 1
+                }}
+              >
+                <Grid
+                  mb="40px"
+                  gc="repeat(auto-fill,  minmax(240px, 1fr))"
+                  gg="40px"
+                >
+                  {GoodList}
+                </Grid>
+                <NoData show={showNomore} />
+              </div>
+              <Spin spinning={spinLoading} />
+            </div>
+          </TabPane>
+          <TabPane tab={t('create.land')} key="2">
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%'
+              }}
+            >
+              <StatusBar
+                hideActions
+                onOpenAdd={() => {}}
+                onChange={(val) => setLandSort(val)}
+                count={landList.length}
+              />
+              <div
+                style={{
+                  padding: '24px',
+                  overflowY: 'auto',
+                  boxSizing: 'border-box'
+                }}
+              >
+                <LandList>{landList}</LandList>
+                <NoData show={showNomore2} />
+              </div>
+            </div>
+          </TabPane>
+
+          <TabPane tab="VoxelRole" key="3">
+            <Voxel getToken={getLoginToken} account={account} />
+          </TabPane>
+
+          <TabPane tab="VoxelPart" key="4">
+            <Suspense fallback="">
+              <VoxelPart />
+            </Suspense>
+          </TabPane>
+
+          <TabPane tab={t('create.name')} key="5"></TabPane>
+        </StyledTabbar>
+      </Page>
+
+      <Modal
+        title={t('create.create')}
+        visible={isModalVisible}
+        onOk={createSpace}
+        width="600px"
+        onCancel={() => {
+          setIsModalVisible(false);
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            gap: '24px'
+            // width: '600px'
+          }}
+        >
+          <Input
+            value={name}
+            placeholder={t('create.input_place1')}
+            onChange={(val) => handleChangeName(val)}
+          />
+          <Selection
+            style={{ margin: 0 }}
+            onChange={(val) => handleSizeSelect(val)}
+            default={'4 × 4 × 4'}
+            selection={[
+              '4 × 4 × 4',
+              '4 × 6 × 6',
+              '4 × 8 × 8',
+              '4 × 10 × 10',
+              '4 × 12 × 12',
+              '4 × 14 × 14',
+              '6 × 6 × 6',
+              '6 × 10 × 10',
+              '6 × 14 × 14',
+              '6 × 16 × 16',
+              '8 × 8 × 8',
+              '8 × 12 × 12',
+              '8 × 16 × 16',
+              '8 × 20 × 20',
+              '10 × 14 × 14',
+              '12 × 14 × 14',
+              '24 × 24 × 24',
+              '52 × 52 × 52'
+            ]}
+          />
+        </div>
+
+        <TempList>
+          <TempItem onClick={() => selectItem(null)}>
+            <img src={createTemp} alt="" />
+            <div style={{ margin: '8px 10px' }}>
+              <TempInfo>
+                <div>{t('create.default')}</div>
+                <div>0 {t('create.frames')}</div>
+              </TempInfo>
+              <TempInfo
+                style={{ fontSize: '12px', color: 'rgba(255, 255, 255, .65)' }}
+              >
+                <div>By @ehr_wolfgang</div>
+                <div>{t('create.free')}</div>
+              </TempInfo>
+            </div>
+            <ItemCover
+              style={{
+                border: getBgColor(null)
+              }}
+            />
+          </TempItem>
+
+          {filteredTemp}
+        </TempList>
+      </Modal>
+
+      <StyledModal
+        title={t('create.edit')}
+        visible={isEditVisible}
+        width="310px"
+        footer={Footer}
+        afterClose={resetUpload}
+        onCancel={() => {
+          setIsEditVisible(false);
+        }}
+      >
+        <div style={{ display: 'none' }}>
+          <input
+            onChange={dropFile}
+            ref={fileInput}
+            type="file"
+            accept="image/png, image/jpeg"
+          />
+        </div>
+        <div
+          onClick={() => fileInput.current.click()}
+          onDragOver={(e) => {
+            // e.preventDefault();
+            e.stopPropagation();
+          }}
+          onDrop={dropFile}
+          style={{
+            width: '278px',
+            height: '272px',
+            border: '2px dashed #2C3742',
+            borderRadius: '4px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: '20px',
+            cursor: 'pointer',
+            overflow: 'hidden'
+          }}
+        >
+          <div
+            style={{
+              display: imgData ? 'block' : 'none'
+            }}
+          >
+            <img
+              style={{
+                width: '100%'
+              }}
+              src={imgData}
+              alt=""
+            />
+          </div>
+
+          <div
+            style={{
+              display: imgData ? 'none' : 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '14px'
+            }}
+          >
+            <img style={{ width: '70px' }} src={drag} alt="" />
+            <span
+              style={{
+                fontWeight: 'bold',
+                fontSize: '18px'
+              }}
+            >
+              {t('create.drag')}
+            </span>
+          </div>
+          <div
+            style={{
+              fontSize: '10px',
+              color: 'rgba(255,255,255, .2)',
+              lineHeight: '16px',
+              display: imgData ? 'none' : 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+            <span style={{ textAlign: 'center' }}>
+              {t('create.uploader_text1')}{' '}
+            </span>
+            <span>
+              <span>{t('create.uploader_text2')} </span>
+              <span style={{ color: '#177ddc' }}>
+                {t('create.uploader_text3')} {selectedSize[0]} ×{' '}
+                {selectedSize[1]}
+              </span>
+            </span>
+            <span>{t('create.uploader_text4')}</span>
+          </div>
+        </div>
+        <Input
+          style={{
+            marginTop: '16px',
+            borderColor: '#2C3742',
+            borderRadius: '4px'
+          }}
+          onChange={(e) => setImageName(e.target.value)}
+          type="text"
+          placeholder={t('create.input_place2')}
+        />
+      </StyledModal>
+    </MainPage>
+  );
+}
+
+const TempList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #2c3742;
+  border-radius: 4px;
+  margin-top: 24px;
+  height: 308px;
+  overflow-y: auto;
+`;
+
+const TempItem = styled.div`
+  width: 250px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #242d36;
+  border: 1px solid #2c3741;
+  position: relative;
+  overflow: hidden;
+  & img {
+    width: 100%;
+    height: 128px;
+  }
+`;
+
+const ItemCover = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+`;
+
+const TempInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+`;
+
+const StatusBar = (props) => {
+  const { t } = useTranslation();
+  const addAction = props.hideActions ? (
+    ''
+  ) : (
+    <Icon
+      src={add}
+      onClick={props.onOpenAdd}
+      style={{ width: '21px', marginRight: '18px', cursor: 'pointer' }}
+    />
+  );
+
+  const upAction = props.hideActions ? (
+    ''
+  ) : (
+    <Icon
+      src={upload}
+      onClick={() => message.info(t('app.message.coming'))}
+      style={{ width: '21px', cursor: 'pointer' }}
+    />
+  );
+
+  return (
+    <Title title={props.count + ' ' + t('statusbar.results')}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
+        <Selection
+          onChange={(val) => props.onChange(val)}
+          default={t('create.new')}
+          selection={[t('create.new'), t('create.size')]}
+          style={{
+            marginRight: '20px',
+            width: '100px'
+          }}
+        />
+        {addAction}
+        {upAction}
+      </div>
+    </Title>
+  );
+};
+
+const MCard = styled.div`
+  border-radius: 4px;
+  overflow: hidden;
+`;
+
+const GoodCard = (props) => {
+  const { t } = useTranslation();
+  const [, setHideUi] = useLocalStorageState('hide_ui');
+
+  const go2Editor = (uuid) => {
+    setHideUi(false);
+    window.open(`/editor/${uuid}`);
+  };
+
+  const copy = async (uuid) => {
+    const myToken = await props.token();
+    if (!myToken) return;
+    props.onCopy(true);
+    const res = await copySpace({
+      space_uuid: uuid,
+      login_token: myToken,
+      address: props.account
+    });
+    props.onCopy(false);
+    if (res?.code === 200) {
+      props.onDrop();
+      message.success(t('app.message.copy_success'));
+    }
+  };
+
+  const drop = (uuid) => {
+    Modal.confirm({
+      content: t('create.drop_space'),
+      async onOk() {
+        const myToken = await props.token();
+        if (!myToken) return;
+        const dropRes = await dropSpace({
+          space_uuid: uuid,
+          login_token: myToken,
+          address: props.account
+        });
+        if (dropRes?.data?.msg === 'success') {
+          props.onDrop();
+          message.success(t('app.message.drop_success'));
+        }
+      },
+      onCancel() {
+      }
+    });
+
+    return;
+  };
+
+  return (
+    <MCard>
+      <div style={{ width: '100%', height: '247px' }}>
+        <Image src={props.good.head_img || GoodImg} />
+      </div>
+      <ActionSheet>
+        <div>{props.good.name}</div>
+        <Flex ai="center">
+          <Icon
+            src={union}
+            style={{
+              marginRight: '8px',
+              width: '16px'
+            }}
+          />
+          <span>
+            {props.good.width} × {props.good.long} × {props.good.height}
+          </span>
+        </Flex>
+        <Flex
+          ai="center"
+          bt="1px solid rgba(255, 255, 255, .05)"
+          pt="16px"
+          gap="32px"
+        >
+          <Icon
+            src={star}
+            style={{ width: '22px', cursor: 'pointer' }}
+            onClick={() => go2Editor(props.good.uuid)}
+          />
+          <Icon
+            src={copy2}
+            style={{ width: '22px', cursor: 'pointer' }}
+            onClick={() => copy(props.good.uuid)}
+          />
+          <a
+            download="download.json"
+            href={`${
+              process.env.REACT_APP_SERVER || server
+            }/zone/user/downloadjson?uuid=${props.good.uuid}&login_token=${
+              props.token
+            }&address=${props.account}`}
+          >
+            <Icon
+              src={download}
+              onClick={() => message.info(t('app.message.downloading'))}
+              style={{ width: '22px', cursor: 'pointer' }}
+            />
+          </a>
+          <Icon
+            src={del}
+            style={{ width: '22px', cursor: 'pointer' }}
+            onClick={() => drop(props.good.uuid)}
+          />
+        </Flex>
+      </ActionSheet>
+    </MCard>
+  );
+};
+
+const StyledModal = styled(Modal)`
+  user-select: none;
+  & .ant-modal-header {
+    background-color: #1a2026;
+  }
+  & .ant-modal-content {
+    background-color: #1a2026;
+    & .ant-modal-close {
+      color: #fff;
+    }
+  }
+  & .ant-modal-body {
+    padding: 16px;
+  }
+  & .ant-modal-footer {
+    border-top: none !important;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px 16px 16px;
+    & button {
+      flex-grow: 1;
+      margin: 0 !important;
+      border-radius: 4px;
+    }
+    & .ant-btn-primary {
+      background: linear-gradient(154.56deg, #4db7f5 14.1%, #8771ff 91.75%);
+      box-shadow: inset -1.48438px -1.48438px 2.96875px #6699fa,
+        inset 2.96875px 2.96875px 11.1328px #b8d7ff;
+      border: none;
+    }
+  }
+`;

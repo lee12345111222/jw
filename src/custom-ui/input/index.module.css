@@ -1,0 +1,23 @@
+.input {
+  width: 100%;
+  padding: 4px 12px;
+  background-color: #1f2830;
+  border: 1px solid #2a333a;
+  border-radius: 4px;
+  outline: none;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.error {
+  border-color: #ff2171;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.24);
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

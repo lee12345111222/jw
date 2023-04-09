@@ -1,0 +1,10 @@
+.bg {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    rgb(43, 24, 80),
+    rgb(99, 65, 170) 23.72%,
+    rgb(181, 97, 217) 76.33%
+  );
+}

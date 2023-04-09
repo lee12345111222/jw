@@ -1,0 +1,40 @@
+import { useCallback, useState } from 'react';
+import { useWallet } from 'use-wallet';
+
+// import { useLocalStorageState } from 'ahooks';
+
+export default function useRoleSign() {
+  const { account, ethereum } = useWallet();
+
+  const [roleSign, setRoleSign] = useState();
+
+  const getRoleSign = useCallback(
+    async (msgParams) =>
+      new Promise((resolve, reject) => {
+        ethereum.sendAsync(
+          {
+            method: 'personal_sign',
+            params: [msgParams, account],
+            from: account,
+            id: Date.now()
+          },
+          function (err, result) {
+            if (err) {
+              reject(err);
+              return;
+            }
+            if (result.error) {
+              reject(result.error.message);
+              return;
+            }
+            console.log('sign', result);
+            setRoleSign(result.result);
+            // resolve(result);
+          }
+        );
+      }),
+    [account, ethereum, setRoleSign]
+  );
+
+  return [roleSign, getRoleSign, setRoleSign];
+}

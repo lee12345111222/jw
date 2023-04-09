@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static-map/static/css/main.73c64980.css",
+    "main.js": "/static-map/static/js/main.771b27e3.js",
+    "static/css/190.6c9999ec.chunk.css": "/static-map/static/css/190.6c9999ec.chunk.css",
+    "static/js/190.c8a5f888.chunk.js": "/static-map/static/js/190.c8a5f888.chunk.js",
+    "static/js/27.b3e1be0c.chunk.js": "/static-map/static/js/27.b3e1be0c.chunk.js",
+    "static/js/279.c749e9ae.chunk.js": "/static-map/static/js/279.c749e9ae.chunk.js",
+    "static/media/settled-icon.svg": "/static-map/static/media/settled-icon.f2846dbefed6526aa79ab42a608b4605.svg",
+    "index.html": "/static-map/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.73c64980.css",
+    "static/js/main.771b27e3.js"
+  ]
+}

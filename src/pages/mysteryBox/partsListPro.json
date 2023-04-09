@@ -1,0 +1,72 @@
+{
+  "0": [
+    {
+      "name": "Monkey (full set)",
+      "rarity": "R",
+      "ratio": "0.1"
+    },
+    {
+      "name": "Alien (full set)",
+      "rarity": "R",
+      "ratio": "0.25"
+    },
+    {
+      "name": "Human (full set)",
+      "rarity": "N",
+      "ratio": "0.65"
+    }
+  ],
+  "1": [
+    {
+      "name": "Robot (full set)",
+      "rarity": "SR",
+      "ratio": "0.1"
+    },
+    {
+      "name": "Monkey (full set)",
+      "rarity": "R",
+      "ratio": "0.25"
+    },
+
+    {
+      "name": "Alien (full set)",
+      "rarity": "R",
+      "ratio": "0.65"
+    }
+  ],
+  "2": [
+    {
+      "name": "Elves (full set)",
+      "rarity": "SR",
+      "ratio": "0.1"
+    },
+    {
+      "name": "Robot (full set)",
+      "rarity": "SR",
+      "ratio": "0.25"
+    },
+
+    {
+      "name": "Monkey (full set)",
+      "rarity": "R",
+      "ratio": "0.65"
+    }
+  ],
+  "3": [
+    {
+      "name": "Zombie (full set)",
+      "rarity": "SSR",
+      "ratio": "0.1"
+    },
+    {
+      "name": "Elves (full set)",
+      "rarity": "SR",
+      "ratio": "0.25"
+    },
+    {
+      "name": "Robot (full set)",
+      "rarity": "SR",
+      "ratio": "0.65"
+    }
+  ]
+}

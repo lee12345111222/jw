@@ -1,0 +1,23 @@
+.number-of-parts {
+  color: #ff069b;
+  font-weight: 400;
+}
+
+.number-of-parts.selected {
+  color: #06c4ff;
+}
+
+.loading-icon {
+  width: 42px;
+  animation: loading-animation 0.666s cubic-bezier(0.42, 0.24, 0.58, 0.76)
+    infinite;
+}
+
+@keyframes loading-animation {
+  from {
+    transform: rotate(-105deg);
+  }
+  to {
+    transform: rotate(255deg);
+  }
+}

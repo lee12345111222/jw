@@ -1,0 +1,39 @@
+.tab {
+  display: flex;
+  gap: 180px;
+  justify-content: center;
+}
+.tab-item {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  box-sizing: border-box;
+  padding: 30px 0;
+  cursor: pointer;
+}
+
+.clicked {
+  border-bottom: 2px solid #06c4ff;
+}
+
+.voxel-editor-container {
+  padding: 68px 0 28px;
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
+
+.tab-pane-item {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.02em;
+  padding: 14px 0;
+}

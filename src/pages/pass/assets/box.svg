@@ -1,0 +1,28 @@
+<svg width="942" height="274" viewBox="0 0 942 274" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4923 -0.000160217H927.508V14.4921H942V258.791H927.508V273.283H14.4923V258.791H0V14.4921H14.4923V-0.000160217Z" fill="url(#paint0_linear_1093_40863)"/>
+<g filter="url(#filter0_dd_1093_40863)">
+<path d="M31.081 28.4946V12.9394H914.024V28.4946V30.0474H915.577H929.06V243.236H915.577H914.024V244.789V260.344H31.081V244.789V243.236H29.5283H16.0451V30.0474H29.5283H31.081V28.4946Z" stroke="#DEBCF9" stroke-opacity="0.15" stroke-width="3.10549" shape-rendering="crispEdges"/>
+</g>
+<defs>
+<filter id="filter0_dd_1093_40863" x="6.21099" y="3.10534" width="928.543" height="267.073" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="-4.14066" dy="-4.14066"/>
+<feGaussianBlur stdDeviation="2.07033"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.254902 0 0 0 0 0.0509804 0 0 0 0 0.470588 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1093_40863"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4.14066"/>
+<feGaussianBlur stdDeviation="2.07033"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.254942 0 0 0 0 0.0490451 0 0 0 0 0.470833 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_1093_40863" result="effect2_dropShadow_1093_40863"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_1093_40863" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_1093_40863" x1="0" y1="-0.000160217" x2="977.196" y2="273.283" gradientUnits="userSpaceOnUse">
+<stop stop-color="#7127AE" stop-opacity="0.31"/>
+<stop offset="1" stop-color="#401663" stop-opacity="0.48"/>
+</linearGradient>
+</defs>
+</svg>

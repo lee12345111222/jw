@@ -1,0 +1,146 @@
+.parcel {
+  height: 100%;
+  /* border: 2px dotted rgba(255, 0, 0, 0.64); */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.list {
+  flex-grow: 1;
+  overflow: hidden;
+  /* border: 2px dotted rgba(255, 165, 0, 0.64); */
+}
+
+.card {
+  background-color: #2b2933;
+}
+
+.card-details {
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.card-title {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.size img {
+  height: 16px;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  /* justify-content: space-between; */
+}
+
+.actions img {
+  width: 22px;
+  cursor: pointer;
+}
+
+.blueprint-dialog {
+  background-color: #26242e;
+}
+
+.blueprint-dialog-title {
+  font-size: 18px;
+}
+
+.blueprint-count {
+  padding: 12px 24px;
+}
+
+.blueprint-dialog :global(.content) {
+  height: 780px;
+  max-height: calc(100vh - 128px);
+  width: 1182px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.blueprint-list {
+  background-color: #22202b;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 24px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.loading {
+  width: 100%;
+}
+
+.discover-item {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.blueprint-card {
+  background-color: #2b2933;
+}
+
+.blueprint-title {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.blueprint-tags {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blueprint-empty {
+  width: 100%;
+}
+
+.basic-card-image {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+  background-color: #ffb802;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.basic-card-icon {
+  width: 16px;
+  height: 16px;
+}

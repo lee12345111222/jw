@@ -1,0 +1,12 @@
+// API error codes
+	ApiCodeSuccess  int32 = 200
+	ApiCodeNotFound int32 = 404
+	ApiCodeParamErr int32 = 401
+	ApiCodeNoAuth   int32 = 403
+	ApiCodeErrMsg   int32 = 500
+
+	ApiCodeTokenExpired int32 = 10001
+	ApiCodeIllegalChar  int32 = 10002
+	ApiCodeIllegalUploadFile  int32 = 10003
+	ApiCodeUploadMIMEWrong int32 = 10004
+	ApiCodeUploadSizeWrong int32 = 10005

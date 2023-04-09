@@ -1,0 +1,25 @@
+@import './../theme.css';
+
+input {
+  background-color: var(--bg-color-light);
+  border: 1px solid #2a333a;
+  outline: none;
+  color: var(--text-color-secondary);
+  border-radius: 4px;
+  width: 100%;
+  padding: 4px 12px;
+  box-sizing: border-box;
+}
+
+input:hover {
+  border-color: rgba(var(--text-color-blue-base), 0.44);
+}
+
+input:focus {
+  /* border-color: var(--text-color-blue); */
+  border-color: rgba(var(--text-color-blue-base), 0.64);
+}
+
+input::placeholder {
+  color: var(--text-color-darker);
+}

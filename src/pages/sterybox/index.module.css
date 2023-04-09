@@ -1,0 +1,30 @@
+.box-container {
+    position: relative;
+    margin-left: 50%;
+            margin-top: 14px;
+            transform: translateX(-50%);
+            width: 246px;
+            height: 246px;
+  }
+
+ .box-img{
+    width: 246px;
+    height: 246px;
+ }
+  .box-img2 {
+    width: 246px;
+    height: 246px;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    animation: identifier 1.28s ease-in-out alternate-reverse infinite;
+  }
+  
+  @keyframes identifier {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

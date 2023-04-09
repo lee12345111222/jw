@@ -1,0 +1,167 @@
+.page-poster {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  height: 434px;
+  padding-right: 116px;
+  padding-left: 52px;
+  padding-top: 28px;
+  margin: -24px;
+  margin-bottom: 0;
+  box-sizing: content-box;
+  overflow: hidden;
+}
+
+.page-poster.loaded {
+  /* background-color: rgba(0, 0, 0, 0.8); */
+}
+
+.page-poster-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 462px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.page-poster-bg img {
+  width: 100%;
+}
+
+.poster-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.poster-title {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.poster-text {
+  font-size: 16px;
+}
+
+.discover-item {
+  background-color: #282b30;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.16s ease-out;
+  cursor: pointer;
+}
+
+.discover-item:hover {
+  box-shadow: 2px 4px 8px 0 rgb(0 0 0 / 32%), -2px 6px 12px 0 rgb(0 0 0 / 32%);
+  margin-top: -4px;
+}
+
+.image-box {
+  width: 100%;
+  aspect-ratio: 7 / 4;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #2a2d32;
+  overflow: hidden;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.onload {
+  animation: posterOnload 0.16s ease-out forwards;
+}
+
+@keyframes posterOnload {
+  to {
+    opacity: 1;
+  }
+}
+
+.item-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #282b30;
+}
+
+.title-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: bold;
+
+  color: #fff;
+}
+
+.info-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+}
+
+.info-list div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.info-list div span {
+  padding-top: 4px;
+}
+
+.info-list img {
+  height: 20px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  /* aspect-ratio: 1; */
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  overflow: hidden;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar img {
+  height: 72px;
+  margin-top: -4px;
+}
+
+.user-names {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  gap: 4px;
+}
+
+.user-address {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+}

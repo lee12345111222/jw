@@ -1,0 +1,111 @@
+.Card{
+    overflow: hidden;
+    border-radius: 6px;
+    padding-top: 24px;
+    padding-left: 24px;
+}
+
+
+
+/* .Card p {
+    font-size: 16px;
+    font-family: 'Alibaba PuHuiTi';
+    font-weight: normal;
+    margin-bottom: 0;
+    line-height: 30px;
+} */
+
+.card-left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.data{
+    margin-top: 12px;
+    display: flex;
+    align-items: start;
+    
+}
+
+.data-right{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    gap:4px;
+}
+.title{
+    font-family: 'Alibaba PuHuiTi';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+    letter-spacing: 0.08em;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.number{
+    font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 120%;
+/* identical to box height, or 24px */
+
+text-transform: capitalize;
+
+color: rgba(255, 255, 255, 0.85);
+margin-bottom: 4px;
+}
+
+.type{
+    font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 120%;
+/* or 19px */
+text-transform: capitalize;
+
+color: rgba(255, 255, 255, 0.85);
+}
+
+.bottomNumber{
+    font-family: 'SF Pro Display';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 120%;
+/* or 19px */
+
+text-transform: capitalize;
+
+color: rgba(255, 255, 255, 0.65);
+}
+
+.d-flex{
+    display: flex;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.wh30{
+    width: 32px;
+    height: 32px;
+}
+.leftImg{
+    margin-right: 12px;
+}
+.h80{
+    height: 80%;
+}
+.card_right{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.items_end{
+    align-items: end;
+}

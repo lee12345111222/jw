@@ -1,0 +1,83 @@
+.dialog {
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 400px;
+}
+
+.time-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dialog-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dialog-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.err {
+  color: #ff069b;
+}
+
+.suc {
+  color: #fff;
+}
+
+.claim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px 16px 16px;
+}
+
+.congratulations {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.congratulation-header {
+  font-weight: 600;
+  font-size: 24px;
+  /* padding-top: 16px; */
+  text-align: center;
+  color: #c8921e;
+}
+
+.congratulations > div {
+  /* width: 260px; */
+  /* text-align: center; */
+  /* color: rgba(255, 255, 255, 0.65); */
+}
+
+.congratulation-footer {
+  padding: 0 16px 16px;
+}
+
+.view-detail-btn {
+  color: #06c4ff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 224px;
+  padding: 40px 80px;
+}
+
+.success img {
+  width: 42px;
+}

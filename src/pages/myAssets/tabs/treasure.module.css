@@ -1,0 +1,275 @@
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-bottom: 1px solid #30363c;
+  color: #fff;
+}
+
+.treasure {
+  padding: 0 24px;
+}
+
+.item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 72px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+@media screen and (max-width: 1280px) {
+  .item {
+    gap: 24px;
+  }
+}
+
+.item .title-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.item .icon {
+  width: 38px;
+}
+
+.item .title {
+  color: #fff;
+}
+
+.item .link {
+  color: #2f6bff;
+  cursor: pointer;
+  transition: all 0.16s ease-out;
+}
+
+.item .link:hover {
+  color: hsl(223, 100%, 74%);
+}
+
+.item .amount {
+  min-width: 200px;
+}
+
+.item .timeline {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item .time-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item .actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.duration {
+  height: 4px;
+  width: 100%;
+  background-color: #2b3640;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.duration .duration-active {
+  height: 4px;
+  /* background-color: #1890ff; */
+  border-radius: 2px;
+}
+
+.duration .circle {
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  border: 4px solid #192026;
+  border-radius: 6px;
+  left: 0;
+  top: -4px;
+  box-sizing: content-box;
+}
+
+.duration .circle2 {
+  left: calc(50% - 6px);
+}
+
+.duration .circle3 {
+  left: calc(100% - 12px);
+}
+
+.duration .circle::before {
+  content: ' ';
+  width: 2px;
+  height: 4px;
+  border: solid #192026;
+  border-width: 2px 2px 2px 0;
+  border-radius: 0 4px 4px 0;
+  position: absolute;
+  left: -6px;
+  top: -2px;
+}
+
+.duration .circle::after {
+  content: ' ';
+  width: 2px;
+  height: 4px;
+  border: solid #192026;
+  border-width: 2px 0 2px 2px;
+  border-radius: 4px 0 0 4px;
+  position: absolute;
+  left: 6px;
+  top: -2px;
+}
+
+.dialog {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  background-color: #192026;
+  border-radius: 4px;
+  /* box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%); */
+}
+
+.dialog .dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  line-height: 16px;
+  border-bottom: 1px solid #30363c;
+}
+
+.dialog .dialog-header img {
+  height: 16px;
+  cursor: pointer;
+}
+
+.dialog .dialog-title {
+  font-size: 16px;
+  color: #fff;
+}
+
+.dialog .dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  padding-bottom: 0;
+}
+
+.reward {
+  display: flex;
+  align-items: center;
+}
+
+.reward-count {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.dialog .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 26px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+}
+
+.input div {
+  width: 128px;
+}
+
+.input input {
+  background-color: #1f2830;
+  border: 1px solid #2a333a;
+  outline: none;
+  border-radius: 4px;
+  width: 380px;
+  padding: 4px 12px;
+  box-sizing: border-box;
+}
+
+.input .detail-item {
+  width: 380px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* input[type='number'] {
+  -moz-appearance: textfield;
+} */
+
+.loading {
+  background-color: #192026;
+  color: rgba(255, 255, 255, 0.65);
+  border-radius: 4px;
+  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.loading > div {
+  width: 224px;
+  text-align: center;
+}
+
+.loading > img {
+  width: 42px;
+  animation: loading-animation 0.666s cubic-bezier(0.42, 0.24, 0.58, 0.76)
+    infinite;
+}
+
+.box-text {
+  font-size: 14px;
+}
+
+.box-id {
+  color: #06c4ff;
+}
+
+.box-id:hover {
+  text-decoration: underline;
+}
+
+.dots {
+  display: inline-block;
+  width: 14px;
+}
+
+@keyframes loading-animation {
+  from {
+    transform: rotate(-105deg);
+  }
+  to {
+    transform: rotate(255deg);
+  }
+}

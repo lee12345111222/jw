@@ -1,0 +1,58 @@
+.editor {
+  background-color: #1f1d2a;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: hidden;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: rgba(24, 22, 36, 0.4);
+}
+
+.header > div {
+  height: 64px;
+  border-color: #23212f;
+}
+
+.content {
+  flex-grow: 1;
+  overflow: hidden;
+  /* border: solid 8px blue; */
+}
+
+.statusbar {
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom: 1px solid #23212f;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar {
+  background-color: #181624;
+}
+
+.logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  height: 1px;
+  background-color: #323232;
+}

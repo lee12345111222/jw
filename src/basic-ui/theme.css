@@ -1,0 +1,34 @@
+:root {
+  /* alpha */
+
+  /* colors */
+  --color-white-base: 255, 255, 255;
+  --color-white-primary: rgb(var(--text-color-base));
+  --color-white-secondary: rgba(var(--text-color-base), 0.64);
+  --color-white-secondary: rgba(var(--text-color-base), 0.64);
+
+  --text-color-base: 255, 255, 255;
+  --text-color-primary: rgb(var(--text-color-base));
+  --text-color-secondary: rgba(var(--text-color-base), 0.64);
+  --text-color-darker: rgba(var(--text-color-base), 0.44);
+  --text-color-blue-base: 5, 197, 255;
+  --text-color-blue: rgb(var(--text-color-blue-base));
+  --text-color-yellow: #ffb732;
+  --text-color-purple: #ac5cff;
+
+  /* font sizes */
+  --font-size: 14px;
+  --font-size-big: 16px;
+  --font-bigger: 18px;
+  --font-size-small: 12px;
+  /* --font-size-smaller: 12px; */
+
+  /* background colors */
+  --bg-color: #192026;
+  --bg-color-dark: #13181d;
+  --bg-color-light: #1f2830;
+  --bg-color-lighter: #303439;
+
+  --border-color: #323232;
+  --border-color-input: #323232;
+}

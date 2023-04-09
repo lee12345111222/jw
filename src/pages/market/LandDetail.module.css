@@ -1,0 +1,23 @@
+.info-list {
+  display: flex;
+  gap: 88px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.part-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-item img {
+  width: 20px;
+}

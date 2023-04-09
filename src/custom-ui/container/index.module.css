@@ -1,0 +1,67 @@
+.m8px {
+  margin: 8px;
+}
+
+.p0px {
+  padding: 0;
+}
+
+.p8px {
+  padding: 8px;
+}
+
+.p16px {
+  padding: 16px;
+}
+
+.p64px {
+  padding: 64px;
+}
+
+.w100vw {
+  width: 100vw;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.w16px {
+  width: 16px;
+}
+
+.h100vw {
+  height: 100vh;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.static {
+  position: static;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.top0 {
+  top: 0;
+}
+
+.left0 {
+  left: 0;
+}

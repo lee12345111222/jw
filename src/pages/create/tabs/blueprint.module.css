@@ -1,0 +1,51 @@
+.card-title {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title img {
+  cursor: pointer;
+}
+
+.selector-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.selector {
+  font-size: 14px;
+  padding: 0 8px;
+}
+
+.action-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 32px; */
+  padding-top: 16px;
+}
+
+.action-list img {
+  width: 22px;
+  cursor: pointer;
+}
+
+.info-list {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 64px;
+}
+
+.recommands {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  gap: 16px;
+}

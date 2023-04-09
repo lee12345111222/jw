@@ -1,0 +1,243 @@
+{
+  "0": {
+    "title": "body",
+    "list": {
+      "0": "Human",
+      "1": "Alien",
+      "2": "Monkey",
+      "3": "Robot",
+      "4": "Elves",
+      "5": "Zombie",
+      "6": "Skeleton"
+    }
+  },
+  "1": {
+    "title": "hair",
+    "list": {
+      "1": "Slicked Ponytail",
+      "2": "Bob",
+      "3": "Slicked Back",
+      "4": "Ponytail",
+      "5": "Gold Messy",
+      "6": "One Side",
+      "7": "Bun",
+      "8": "Brown Messy",
+      "9": "Half-shaved",
+      "10": "Gold Afro",
+      "11": "Fiery Mohawk",
+      "12": "Brown Afro"
+    }
+  },
+  "2": {
+    "title": "beard",
+    "list": {
+      "1": "Full beard",
+      "2": "Handlebar",
+      "3": "Beardlet",
+      "4": "Whisker",
+      "5": "Mustache",
+      "6": "Muttonchops",
+      "7": "Pencil",
+      "8": "Dali",
+      "9": "Long Beard",
+      "10": "Goatee"
+    }
+  },
+  "3": {
+    "title": "glasses",
+    "list": {
+      "1": "Sunglasses",
+      "2": "Yellow Glasses",
+      "3": "Blue Glasses",
+      "4": "Frameless",
+      "5": "Gray Square Glasses",
+      "6": "White Square Glasses",
+      "7": "Large Lens Glasses",
+      "8": "Pink Glasses",
+      "9": "Black Glasses",
+      "10": "Striped glasses",
+      "11": "Nerdy"
+    }
+  },
+  "4": {
+    "title": "shirt",
+    "list": {
+      "1": "White Tee",
+      "2": "Stripe Tee",
+      "3": "Gradient Sweater",
+      "4": "Lines Tee",
+      "5": "Logo Tee",
+      "6": "Glyph Tee",
+      "7": "Stylized Tee",
+      "8": "Pinstripe Tee",
+      "9": "Cross Jersey",
+      "10": "Rock Jersey",
+      "12": "USA Tee",
+      "13": "Simple Suit",
+      "14": "Stripe Jersey",
+      "15": "Heart Jersey",
+      "16": "Skeleton Jersey",
+      "17": "Heartbeat Tee",
+      "18": "Featured Tie Suit",
+      "19": "Text Jersey",
+      "20": "Rocket Jersey",
+      "21": "Bomb Jersey",
+      "22": "Rocket 1 Jersey",
+      "23": "CAVS 2 Jersey",
+      "24": "NEW 3 Jersey",
+      "25": "Rock 0 Jersey",
+      "26": "SHOK 10 Jersey",
+      "27": "USA 10 Jersey",
+      "28": "TELE 21 Jersey",
+      "29": "Bulls 23 Jersey",
+      "31": "LAK 24 Jersey",
+      "32": "ERJK 13 Jersey"
+    }
+  },
+  "5": {
+    "title": "necklace",
+    "list": {
+      "1": "Gold Cross Chain",
+      "2": "Black Cross Chain",
+      "3": "Gray Skeleton Chain",
+      "4": "Alien Chain",
+      "5": "Pink Alien Chain",
+      "6": "Scarf",
+      "7": "Punk Necklace",
+      "8": "Kerchief",
+      "9": "Mashup Chain",
+      "10": "Leather Necklace"
+    }
+  },
+  "6": {
+    "title": "shoes",
+    "list": {
+      "1": "Classic Sneakers",
+      "2": "Red Running",
+      "3": "Colorful Sneakers",
+      "4": "Oldschool Sneakers",
+      "5": "Fashion Running",
+      "6": "Newschool Sneakers",
+      "7": "Khaki Canvas",
+      "8": "Blue Sneakers",
+      "9": "Yellow Sneakers",
+      "10": "Khaki Sneakers",
+      "11": "White Basketball",
+      "12": "Pink Sneakers",
+      "13": "Red Basketball",
+      "14": "Punk Boots",
+      "15": "Sandals",
+      "16": "Pink Basketball",
+      "17": "Featured Boots",
+      "18": "Black Basketball",
+      "19": "Blue Boots",
+      "20": "Gray Boots"
+    }
+  },
+  "7": {
+    "title": "pants",
+    "list": {
+      "1": "Punk Pants",
+      "2": "Punk Jeans",
+      "3": "Khaki Pants",
+      "4": "Gold Pants",
+      "5": "Casual Pants",
+      "6": "Leisure Pants",
+      "7": "Vans Shorts",
+      "8": "Ripped Jeans",
+      "9": "Patch Pants",
+      "10": "Camouflage Ripped Shorts",
+      "11": "Leisure Shorts",
+      "12": "Stripe Pants",
+      "13": "Simple Jeans",
+      "14": "Skeleton Jeans",
+      "15": "Featured Pants",
+      "16": "Stylize Pants",
+      "17": "Red Punk Pants",
+      "18": "Black Pants",
+      "19": "Pink Pants",
+      "20": "Vans Pants"
+    }
+  },
+  "8": {
+    "title": "hat",
+    "list": {
+      "1": "Monster Cap",
+      "2": "Owl Cap",
+      "3": "Skeleton Cap",
+      "4": "Sup Star Cap",
+      "5": "Punk Cap",
+      "6": "Big Skeleton Cap",
+      "7": "Logo Cap",
+      "8": "Little Monster Cap",
+      "9": "Heart Cap",
+      "10": "Punk Skeleton Cap",
+      "11": "Green Cap",
+      "12": "Fork Cap",
+      "13": "Mashup Cap",
+      "14": "Eagle Cap",
+      "15": "Brimmed",
+      "16": "Camouflage Cap",
+      "17": "Black Skeleton Cap",
+      "18": "Orange Cap",
+      "19": "Little Punk Cap",
+      "20": "Police Cap"
+    }
+  },
+  "9": {
+    "title": "earrings",
+    "list": {
+      "1": "Black Earrings",
+      "2": "Cross Earrings",
+      "3": "Little Cross Earrings",
+      "4": "Eardrop",
+      "5": "Little Black Earrings",
+      "6": "Pink Cross Earrings",
+      "7": "Skeleton Earrings",
+      "8": "Little Gold Earrings",
+      "9": "Mashup Earrings",
+      "10": "Gold Hoops",
+      "11": "Gold Cross Earrings"
+    }
+  },
+  "10": {
+    "title": "coat",
+    "list": {
+      "1": "Sleeveless Jacket",
+      "2": "Black Red Coat",
+      "3": "Black Coat",
+      "4": "Fork Jacket Rivet Jacket",
+      "5": "Skeleton Baseball Coat",
+      "6": "Vans Coat",
+      "7": "Alien Baseball Coat",
+      "8": "Simple Baseball Coat",
+      "9": "Trenchcoat",
+      "10": "Black Sleeveless Jacket",
+      "11": "Sports Jacket",
+      "12": "Fork Vest",
+      "13": "Red Sports Jacket",
+      "14": "Classic Suit",
+      "15": "School Uniform",
+      "16": "Leisure Suit",
+      "17": "Pink Rock",
+      "18": "Stripe Vest",
+      "19": "Rock Vest",
+      "20": "Dead Sleeveless Jacket"
+    }
+  },
+  "action": {
+    "title": "action",
+    "list": {
+      "0": "",
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": ""
+    }
+  }
+}

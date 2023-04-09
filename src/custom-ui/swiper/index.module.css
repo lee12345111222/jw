@@ -1,0 +1,11 @@
+.swiper {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 400px;
+}
+
+.swiper-item {
+  height: 100%;
+  flex-shrink: 0;
+}

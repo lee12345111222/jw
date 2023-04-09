@@ -1,0 +1,19 @@
+.border {
+  border: solid 2px blue;
+}
+
+.border-top {
+  border-top: none;
+}
+
+.border-right {
+  border-right: none;
+}
+
+.border-bottom {
+  border-bottom: none;
+}
+
+.border-left {
+  border-left: none;
+}

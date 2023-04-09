@@ -1,0 +1,3 @@
+.drawerHiden .ant-drawer-content-wrapper{
+    transform: translateX(calc(100% + 16px))!important;
+}

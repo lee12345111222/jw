@@ -1,0 +1,44 @@
+.colorImg {
+  width: 185px;
+  height: 240px;
+  /* margin: 0 12px; */
+  /* box-shadow: -32px 0px 24px rgba(0, 0, 0, 0.45); */
+  border-radius: 8px;
+  position: relative;
+}
+
+.color-atropos {
+  box-shadow: -32px 0px 24px rgba(0, 0, 0, 0.45);
+}
+
+.hex {
+  position: absolute;
+  font-style: normal;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  bottom: 51px;
+  left: 16px;
+}
+.hsb {
+  position: absolute;
+  font-style: normal;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  bottom: 16px;
+  left: 16px;
+}
+.color-item-img {
+  position: absolute;
+  width: 32px;
+  top: 40px;
+  right: 16px;
+}
+
+.colors-imgs-box {
+  display: flex;
+  gap: 24px;
+}
+
+.color-img-box > div:last-child {
+  margin-right: 0 !important;
+}

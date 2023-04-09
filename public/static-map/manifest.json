@@ -1,0 +1,6 @@
+{
+  "short_name": "PlayerOne",
+  "name": "PlayerOne",
+  "start_url": "./static-map",
+  "display": "standalone"
+}

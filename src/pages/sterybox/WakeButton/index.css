@@ -1,0 +1,24 @@
+.defaultBtn:hover{
+    background-image: url('./asstes/rec4_hover.png')!important;
+}
+.defaultBtn:active{
+    background-image: url('./asstes/rec4_click.png')!important;
+}
+.orange:hover{
+    background-image: url('./asstes/rec2_hover.png')!important;
+}
+.orange:active{
+    background-image: url('./asstes/rec2_click.png')!important;
+}
+.blueq:hover{
+    background-image: url('./asstes/rec3_hover.png')!important;
+}
+.blueq:active{
+    background-image: url('./asstes/rec3_click.png')!important;
+}
+.yellow:hover{
+    background-image: url('./asstes/rec1_hover.png')!important;
+}
+.yellow:active{
+    background-image: url('./asstes/rec1_click.png')!important;
+}

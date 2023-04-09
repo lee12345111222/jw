@@ -1,0 +1,28 @@
+.nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: 16px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1;
+  padding: 18px 24px;
+  flex-shrink: 0;
+}
+
+:global(.selected) .nav-item {
+  background-color: #23212f;
+  color: #fff;
+}
+
+.nav-item img {
+  max-height: 18px;
+  max-width: 18px;
+}

@@ -1,0 +1,12 @@
+.land-plan {
+  /* padding: 32px; */
+  /* background-color: #06C4FF; */
+  position: absolute;
+  right: 0;
+  top: 25vh;
+  z-index: 8;
+}
+
+.text {
+  padding: 4px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PlayerOne</title>
+  </head>
+  <body>
+    <script>
+      function redirect() {
+        const { hash } = location;
+
+        if (!hash) {
+          return (location.href = '/');
+        }
+
+        const url = location.hash.slice(1);
+        if (!url.startsWith('https://')) {
+          return (location.href = '/');
+        }
+
+        const allowList = [
+          'https://twitter.com',
+          'https://opensea.io',
+          'testnets.opensea.io',
+          'https://etherscan.io'
+        ];
+
+        const allowed = allowList.find((item) => url.startsWith(`${item}/`));
+
+        if (!allowed) {
+          return (location.href = '/');
+        }
+
+        location.href = url;
+      }
+
+      redirect();
+    </script>
+  </body>
+</html>

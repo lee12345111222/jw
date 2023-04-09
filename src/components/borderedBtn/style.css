@@ -1,0 +1,24 @@
+button {
+  border: none;
+  padding: 1px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.bordered-btn-content {
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bordered-btn-mask {
+  position: absolute;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  margin: -2px;
+  transition: all 0.16s ease-out;
+}
+
+.bordered-btn-mask:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}

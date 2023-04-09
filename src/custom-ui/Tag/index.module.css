@@ -1,0 +1,173 @@
+.container {
+  box-sizing: content-box;
+}
+
+.border {
+  border: solid;
+  flex-shrink: 0;
+}
+
+.bw1px .border {
+  border-width: 1px;
+}
+
+.bw2px .border {
+  border-width: 2px;
+}
+
+.bw4px .border {
+  border-width: 4px;
+}
+
+.bh2px .top,
+.bh2px .bottom {
+  height: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.bh2px .left,
+.bh2px .right {
+  width: 2px;
+}
+
+.bh3px .top,
+.bh3px .bottom {
+  height: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.bh3px .left,
+.bh3px .right {
+  width: 3px;
+}
+
+.bh4px .top,
+.bh4px .bottom {
+  height: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.bh4px .left,
+.bh4px .right {
+  width: 4px;
+}
+
+.bh6px .top,
+.bh6px .bottom {
+  height: 6px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.bh6px .left,
+.bh6px .right {
+  width: 6px;
+}
+
+.bh8px .top,
+.bh8px .bottom {
+  height: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.bh8px .left,
+.bh8px .right {
+  width: 8px;
+}
+
+.top {
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+.bottom {
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.right {
+  border-left: none;
+}
+
+.left {
+  border-right: none;
+}
+
+.blue .border {
+  border-color: #06c4ff;
+}
+
+.blue.filled .border,
+.blue.filled .center {
+  background-color: #06c4ff;
+}
+
+.red .border {
+  border-color: #ea4372;
+}
+
+.red.filled .border,
+.red.filled .center {
+  background-color: #ea4372;
+}
+
+.red {
+  color: #ea4372;
+}
+
+.gray.filled .border,
+.gray.filled .center {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.gray .border {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.gray {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pink.filled .border,
+.pink.filled .center {
+  background-color: #d645c4;
+}
+
+.pink .border {
+  border-color: #d645c4;
+}
+
+.yellow.filled .border,
+.yellow.filled .center {
+  background-color: #ffb732;
+}
+
+.yellow .border {
+  border-color: #ffb732;
+}
+
+.deep.filled .border,
+.deep.filled .center {
+  background-color: #252557;
+}
+
+.deep .border {
+  border-color: #252557;
+}
+
+.purple.filled .border,
+.purple.filled .center {
+  background-color: #5500ad;
+}
+
+.purple .border {
+  border-color: #5500ad;
+}
+
+.white .border {
+  border-color: #c0dafe;
+}

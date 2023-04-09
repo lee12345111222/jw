@@ -1,0 +1,69 @@
+.title {
+  font-family: 'Alibaba PuHuiTi';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin-bottom: 60px;
+}
+
+.gardBox {
+  display: grid;
+  grid-template-columns: repeat(4, 248px);
+  gap: 48px;
+  position: absolute;
+  top: 170px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.memberCard {
+  width: 248px;
+  height: 248px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(150, 150, 150, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.memberCard:hover {
+  transform: translateY(-4px);
+}
+.memberImg {
+  width: 98px;
+  height: 98px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+.memberName {
+  height: 23px;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+.memberDesc {
+  height: 18px;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  opacity: 0.8;
+}

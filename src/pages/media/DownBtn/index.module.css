@@ -1,0 +1,21 @@
+.down-btn {
+  cursor: pointer;
+  width: 28px;
+  height: 17px;
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  text-transform: capitalize;
+  color: #06C4FF;
+  margin-right: 8px;
+}
+
+.down-btn:hover {
+  color: #059DCC;
+}
+
+.down-btn:active {
+  color: #047699;
+}

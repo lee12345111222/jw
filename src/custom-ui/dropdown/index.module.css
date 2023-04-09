@@ -1,0 +1,10 @@
+.dropdown {
+  z-index: 1;
+  list-style: none;
+}
+
+/* .dropdown-container {
+  overflow: visible;
+  height: 30px;
+  background-color: rebeccapurple;
+} */

@@ -1,0 +1,343 @@
+{
+  "config": {
+    "width": 3894,
+    "height": 3008,
+    "tileSize": 512,
+    "offsetX": 2688,
+    "offsetY": 1766
+  },
+  "shipStations": [
+    {
+      "startX": -1780,
+      "startY": -1485.6799999999998,
+      "endX": -1772,
+      "endY": -1477.6799999999998,
+      "name": "BTC",
+      "area": "BTC"
+    },
+    {
+      "startX": -664,
+      "startY": 168,
+      "endX": -672,
+      "endY": 176,
+      "name": "Snow Crash South",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": -286,
+      "startY": 534.3200000000002,
+      "endX": -278,
+      "endY": 542.3200000000002,
+      "name": "Snow Crash East 3",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": 82.57999999999993,
+      "startY": 1080.3200000000002,
+      "endX": 90.57999999999993,
+      "endY": 1088.3200000000002,
+      "name": "Snow Crash North",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": 544,
+      "startY": 790.3200000000002,
+      "endX": 552,
+      "endY": 798.3200000000002,
+      "name": "Oasis East",
+      "area": "Oasis"
+    },
+    {
+      "startX": 382,
+      "startY": 730.3200000000002,
+      "endX": 390,
+      "endY": 738.3200000000002,
+      "name": "Oasis South",
+      "area": "Oasis"
+    },
+    {
+      "startX": 434,
+      "startY": 196.31999999999994,
+      "endX": 442,
+      "endY": 204.31999999999994,
+      "name": "Metaverse",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 1424,
+      "startY": 430.3199999999997,
+      "endX": 1432,
+      "endY": 438.3199999999997,
+      "name": "Maze Island",
+      "area": "Maze Island"
+    },
+    {
+      "startX": 288,
+      "startY": -1593.6799999999998,
+      "endX": 296,
+      "endY": -1585.6799999999998,
+      "name": "nameless"
+    },
+    {
+      "startX": -2016,
+      "startY": -531.6799999999998,
+      "endX": -2008,
+      "endY": -523.6800000000001,
+      "name": "Adventure Island",
+      "area": "Adventure Island"
+    },
+    {
+      "startX": 118.57999999999993,
+      "startY": 992.3200000000002,
+      "endX": 126.57999999999993,
+      "endY": 1000.3200000000002,
+      "name": "Snow Crash East 1",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": 119.34000000000015,
+      "startY": 818.8180000000002,
+      "endX": 127.34000000000015,
+      "endY": 826.8180000000002,
+      "name": "Snow Crash East 2",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": -965.2180000000001,
+      "startY": 533.8400000000001,
+      "endX": -957.2180000000001,
+      "endY": 541.8400000000001,
+      "name": "nameless"
+    }
+  ],
+  "busStations": [
+    {
+      "startX": 0,
+      "startY": 150.31999999999994,
+      "endX": 8,
+      "endY": 158.31999999999994,
+      "name": "Beijing AVE",
+      "area": "Parthenon"
+    },
+    {
+      "startX": 194,
+      "startY": 64.31999999999994,
+      "endX": 202,
+      "endY": 72.31999999999994,
+      "name": "Tokyo AVE",
+      "area": "Parthenon"
+    },
+    {
+      "startX": -44,
+      "startY": -207.68000000000006,
+      "endX": -36,
+      "endY": -199.68000000000006,
+      "name": "Los Angles AVE",
+      "area": "Parthenon"
+    },
+    {
+      "startX": -70,
+      "startY": -397.68000000000006,
+      "endX": -62,
+      "endY": -389.68000000000006,
+      "name": "Amsterdan Ave",
+      "area": "Ethereum"
+    },
+    {
+      "startX": -268,
+      "startY": -509.68000000000006,
+      "endX": -260,
+      "endY": -501.68000000000006,
+      "name": "Los Angles AVE",
+      "area": "Ethereum"
+    },
+    {
+      "startX": 260,
+      "startY": -877.6799999999998,
+      "endX": 268,
+      "endY": -869.6799999999998,
+      "name": "Amsterdan Ave",
+      "area": "Polygon"
+    },
+    {
+      "startX": -172,
+      "startY": 56.319999999999936,
+      "endX": -164,
+      "endY": 64.31999999999994,
+      "name": "Sydney AVE",
+      "area": "Parthenon"
+    },
+    {
+      "startX": 526,
+      "startY": 860.3200000000002,
+      "endX": 534,
+      "endY": 866.3200000000002,
+      "name": "Stadium St",
+      "area": "Oasis"
+    },
+    {
+      "startX": 276,
+      "startY": 1058.3200000000002,
+      "endX": 284,
+      "endY": 1066.3200000000002,
+      "name": "Garden St",
+      "area": "Oasis"
+    },
+    {
+      "startX": 398,
+      "startY": 1058.3200000000002,
+      "endX": 406,
+      "endY": 1066.3200000000002,
+      "name": "Village St",
+      "area": "Oasis"
+    },
+    {
+      "startX": -108,
+      "startY": 986.3200000000002,
+      "endX": -100,
+      "endY": 994.3200000000002,
+      "name": "High St",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": -108,
+      "startY": 860.3200000000002,
+      "endX": -100,
+      "endY": 868.3200000000002,
+      "name": "Park St",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": -108,
+      "startY": 728.3200000000002,
+      "endX": -100,
+      "endY": 736.3200000000002,
+      "name": "Cedar St",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": -108,
+      "startY": 600.3200000000002,
+      "endX": -100,
+      "endY": 608.3200000000002,
+      "name": "High St",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": 376,
+      "startY": 990.3200000000002,
+      "endX": 384,
+      "endY": 998.3200000000002,
+      "name": "Amsterdam AVE",
+      "area": "Oasis"
+    },
+    {
+      "startX": 162,
+      "startY": 990.3200000000002,
+      "endX": 170,
+      "endY": 998.3200000000002,
+      "name": "Amsterdam AVE",
+      "area": "Oasis"
+    },
+    {
+      "startX": 564,
+      "startY": 990.3200000000002,
+      "endX": 572,
+      "endY": 998.3200000000002,
+      "name": "Amsterdam AVE",
+      "area": "Oasis"
+    },
+    {
+      "startX": -364,
+      "startY": 794.3200000000002,
+      "endX": -356,
+      "endY": 802.3200000000002,
+      "name": "Milan AVE",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": -148,
+      "startY": 794.3200000000002,
+      "endX": -140,
+      "endY": 802.3200000000002,
+      "name": "Milan AVE",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": 68,
+      "startY": 794.3200000000002,
+      "endX": 76,
+      "endY": 802.3200000000002,
+      "name": "Milan AVE",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": 278,
+      "startY": 794.3200000000002,
+      "endX": 286,
+      "endY": 802.3200000000002,
+      "name": "Milan AVE",
+      "area": "Oasis"
+    },
+    {
+      "startX": 474,
+      "startY": 794.3200000000002,
+      "endX": 482,
+      "endY": 802.3200000000002,
+      "name": "Milan AVE",
+      "area": "Oasis"
+    },
+    {
+      "startX": 262,
+      "startY": -1063.6799999999998,
+      "endX": 270,
+      "endY": -1055.6799999999998,
+      "name": "Paris AVE",
+      "area": "Polygon"
+    },
+    {
+      "startX": 434,
+      "startY": -1579.6799999999998,
+      "endX": 442,
+      "endY": -1571.6799999999998,
+      "name": "Mumbai AVE"
+    },
+    {
+      "startX": 568,
+      "startY": -1337.6799999999998,
+      "endX": 576,
+      "endY": -1329.6799999999998,
+      "name": "Paris AVE"
+    },
+    {
+      "startX": 1032,
+      "startY": -1219.6799999999998,
+      "endX": 1040,
+      "endY": -1211.6799999999998,
+      "name": "Dubai AVE",
+      "area": "Pet Island"
+    },
+    {
+      "startX": -1158,
+      "startY": 702.3200000000002,
+      "endX": -1150,
+      "endY": 710.3200000000002,
+      "name": "Shanghai AVE"
+    },
+    {
+      "startX": -1642,
+      "startY": 802.3200000000002,
+      "endX": -1634,
+      "endY": 810.3200000000002,
+      "name": "Shanghai AVE"
+    },
+    {
+      "startX": -26,
+      "startY": 600.3200000000002,
+      "endX": -18,
+      "endY": 608.3200000000002,
+      "name": "Beijing AVE",
+      "area": "Snow Crash"
+    }
+  ]
+}

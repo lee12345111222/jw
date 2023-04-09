@@ -1,0 +1,290 @@
+.create-title {
+  font-family: 'Alibaba PuHuiTi';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 46px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-shadow: 0px 4px 0px #000000;
+}
+
+.create-subtitle {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.card-title {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #ffffff;
+}
+.card-content {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.edit-icon {
+  padding: 6px;
+  background: rgba(217, 217, 217, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  width: min-content;
+}
+.edit-icon > svg {
+  display: block;
+}
+
+.voxel-part {
+  width: 100%;
+  min-width: 156px;
+  min-height: 210px;
+  border-radius: 10px;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  border: 2px solid transparent;
+}
+.part-01 {
+  background-image: linear-gradient(rgba(24, 30, 35, 1), rgba(24, 30, 35, 1)),
+    linear-gradient(180deg, rgba(172, 172, 172, 1), rgba(99, 99, 99, 1));
+}
+.part-02 {
+  background-image: linear-gradient(rgba(24, 30, 35, 1), rgba(24, 30, 35, 1)),
+    linear-gradient(180deg, rgba(72, 114, 194, 1), rgba(6, 136, 192, 1));
+}
+.part-03 {
+  background-image: linear-gradient(rgba(24, 30, 35, 1), rgba(24, 30, 35, 1)),
+    linear-gradient(180deg, rgba(71, 21, 211, 1), rgba(133, 0, 180, 1));
+}
+.part-04 {
+  background-image: linear-gradient(rgba(24, 30, 35, 1), rgba(24, 30, 35, 1)),
+    linear-gradient(180deg, rgba(186, 118, 240, 1), rgba(180, 51, 120, 1));
+}
+.part-05 {
+  background-image: linear-gradient(rgba(24, 30, 35, 1), rgba(24, 30, 35, 1)),
+    linear-gradient(180deg, rgba(250, 255, 218, 1), rgba(210, 116, 6, 1));
+}
+.voxel-part-icon {
+  position: absolute;
+  top: 8%;
+  right: 10%;
+}
+.desc-content {
+  font-family: 'Roboto';
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.04em;
+}
+.voxel-editor-card {
+  padding: 14px 20px 25px 20px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.018);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: all 0.16s ease-in-out;
+  flex: 1;
+}
+
+.voxel-editor-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-desc-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 128%;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.role-editor-video-area {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 20px 20px 13px 20px;
+  width: 100%;
+}
+.video-item {
+  flex-grow: 1;
+  aspect-ratio: 320 / 177;
+}
+
+.video-item > a {
+  width: 100%;
+}
+.video-item img {
+  border-radius: 4px;
+}
+
+/**/
+.video-box {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.onload {
+  animation: posterOnload 0.16s ease-out forwards;
+}
+@keyframes posterOnload {
+  to {
+    opacity: 1;
+  }
+}
+.play-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  cursor: pointer;
+}
+
+.subfooter-container {
+  margin-top: 47px;
+  position: relative;
+}
+.subfooter-container > img {
+  width: 100%;
+}
+
+.children-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.subfooter-left-content {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  color: rgba(255, 255, 255, 0.5);
+}
+.subfooter-right-content {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 6px 0px 14px;
+}
+.subfooter-right-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.left-content {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-content {
+  width: 50%;
+  height: 100%;
+}
+
+.right-content-img {
+  height: 164%;
+  align-self: flex-end;
+}
+.footer-left-line {
+  width: 285px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 18px 0;
+}
+
+.footer-left-content {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(255, 255, 255, 0.4);
+}
+.footer-nav {
+  cursor: pointer;
+}
+
+.footer-nav:hover {
+  color: #ffffff;
+}
+
+.footer-container {
+  width: 100%;
+  min-height: 220px;
+  padding: 0 100px;
+}
+
+.footer-center-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 14px;
+  grid-column-gap: 68px;
+}
+
+.footer-right-title {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-right-copyright {
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 27px;
+  color: rgba(255, 255, 255, 0.5);
+  width: max-content;
+}
+
+.footer-right-coin {
+  opacity: 0.65;
+}
+.footer-right-coin:hover {
+  opacity: 0.85;
+}

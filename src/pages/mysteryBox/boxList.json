@@ -1,0 +1,88 @@
+{
+  "part": [
+    {
+      "id": 1,
+      "title": "VoxelRole Mystery Box 1",
+      "img": "/event_static/mBox1.png",
+      "count": "1",
+      "end_time": "2022-1-16 14:27:10",
+      "address": "0xaAD05685a08DA70213885466911e638583654aCD",
+      "desc": "The body will be divided into different levels of rarity according to the type of characters. The rarer the type, the higher the value of the body. The body will have different levels of rarity according to the type of the character. The rarer type has the higher the value of the body.",
+      "free": 1
+    },
+    {
+      "id": 2,
+      "title": "VoxelRole Mystery Box 2",
+      "img": "/event_static/mBox2.png",
+      "count": "3",
+      "end_time": "2022-1-16 14:27:10",
+      "address": "0xaAD05685a08DA70213885466911e638583654aCD",
+      "desc": "The body will be divided into different levels of rarity according to the type of characters. The rarer the type, the higher the value of the body. The body will have different levels of rarity according to the type of the character. The rarer type has the higher the value of the body.",
+      "free": 1
+    },
+    {
+      "id": 3,
+      "title": "VoxelRole Mystery Box 3",
+      "img": "/event_static/mBox3.png",
+      "count": "6",
+      "end_time": "2022-1-16 14:27:10",
+      "address": "0xaAD05685a08DA70213885466911e638583654aCD",
+      "desc": "The body will be divided into different levels of rarity according to the type of characters. The rarer the type, the higher the value of the body. The body will have different levels of rarity according to the type of the character. The rarer type has the higher the value of the body.",
+      "free": 1
+    },
+    {
+      "id": 4,
+      "title": "VoxelRole Mystery Box 4",
+      "img": "/event_static/mBox4.png",
+      "count": "9",
+      "end_time": "2022-1-16 14:27:10",
+      "address": "0xaAD05685a08DA70213885466911e638583654aCD",
+      "desc": "The body will be divided into different levels of rarity according to the type of characters. The rarer the type, the higher the value of the body. The body will have different levels of rarity according to the type of the character. The rarer type has the higher the value of the body.",
+      "free": 1
+    }
+  ],
+  "genesis": [
+    {
+      "id": 1,
+      "title": "Genesis Mystery Box 1",
+      "img": "/event_static/gBox01.png"
+    },
+    {
+      "id": 2,
+      "title": "Genesis Mystery Box 2",
+      "img": "/event_static/gBox02.png"
+    },
+    {
+      "id": 3,
+      "title": "Genesis Mystery Box 3",
+      "img": "/event_static/gBox03.png"
+    },
+    {
+      "id": 4,
+      "title": "Genesis Mystery Box 4",
+      "img": "/event_static/gBox04.png"
+    }
+  ],
+  "blueprint": [
+    {
+      "id": 1,
+      "title": "Blueprint Mystery Box 1",
+      "img": "/event_static/gBox01.png"
+    },
+    {
+      "id": 2,
+      "title": "Blueprint Mystery Box 2",
+      "img": "/event_static/gBox02.png"
+    },
+    {
+      "id": 3,
+      "title": "Blueprint Mystery Box 3",
+      "img": "/event_static/gBox03.png"
+    },
+    {
+      "id": 4,
+      "title": "Blueprint Mystery Box 4",
+      "img": "/event_static/gBox04.png"
+    }
+  ]
+}

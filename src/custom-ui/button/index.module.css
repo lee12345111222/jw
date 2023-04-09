@@ -1,0 +1,36 @@
+.btn {
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  flex-shrink: 0;
+  transition: all 0.16s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:not(.disabled):not(.loading):hover {
+  filter: brightness(1.04);
+}
+
+.btn.clicked:not(.disabled):not(.loading):hover {
+  filter: brightness(0.94);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.64;
+}
+
+.loading {
+  opacity: 0.8;
+}
+
+.loading .loading-icon {
+  animation: loadingIcon linear 1s infinite;
+}
+
+@keyframes loadingIcon {
+  to {
+    transform: rotate(360deg);
+  }
+}

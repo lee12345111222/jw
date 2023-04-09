@@ -1,0 +1,25 @@
+.info-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.info img {
+  width: 22px;
+}
+
+.free {
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.new-box-title {
+  color: #faff00;
+}

@@ -1,0 +1,19 @@
+.card {
+  background-color: #303439;
+  color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hoverable {
+  transition: all 0.16s ease-out;
+}
+
+.hoverable:hover {
+  box-shadow: 2px 4px 8px 0 rgb(0 0 0 / 32%), -2px 6px 12px 0 rgb(0 0 0 / 32%);
+  margin-top: -4px;
+}
+
+.pointer {
+  cursor: pointer;
+}

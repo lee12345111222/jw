@@ -1,0 +1,59 @@
+.costum-popup-container .leaflet-popup-content {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.costum-popup-container .popup-title {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.costum-popup-container .popup-title span {
+  border: solid 1px green;
+}
+
+.costum-popup-container .pop-up-flex {
+  display: flex;
+  gap: 12px;
+}
+
+.costum-popup-container .pop-up-flex div:first-child {
+  background: linear-gradient(147.78deg, #fbcb37 15.22%, #ff982d 91.51%);
+  box-shadow: 0px 0px 3.16712px rgba(254, 181, 51, 0.25),
+    inset -1.58356px -1.58356px 3.16712px rgba(255, 255, 255, 0.4),
+    inset 3.16712px 3.16712px 9.50135px rgba(255, 255, 255, 0.25),
+    inset -3.16712px -3.16712px 11.8767px #df941b;
+
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.costum-popup-container .pop-up-flex div:last-child {
+  background: linear-gradient(156.89deg, #f8a2ff 8.39%, #9b56f4 91.24%);
+  box-shadow: 0px 0px 3.16712px rgba(204, 126, 251, 0.5),
+    inset -1.58356px -1.58356px 3.16712px #b79ae2,
+    inset 3.16712px 3.16712px 11.8767px #f0b1ff,
+    inset -3.16712px -3.16712px 9.50135px #b26df1;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.costum-popup-container .leaflet-popup-content-wrapper {
+  background-color: #192026;
+  border-radius: 0;
+  color: #fff;
+  border: 1px solid #303031;
+  border-radius: 4px;
+}
+
+.costum-popup-container .leaflet-popup-tip-container {
+  display: none;
+}

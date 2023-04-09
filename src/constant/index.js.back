@@ -1,0 +1,32 @@
+export const MysteryBoxConf = {
+  startTimeMysteryBox: 1638316800, // Beijing time
+  startTimeMysteryBoxWhiteFree: 1638316800, // Beijing time
+  startTimeMysteryBoxWhiteDiscount: 1638403200, // Beijing time
+
+  priceMap: {
+    1: '1000000000000000',
+    3: '2000000000000000',
+    6: '3000000000000000',
+    9: '4000000000000000'
+  }
+};
+
+export const PlayerOneRoleAddress =
+  '0x00b84D0D107E389497B8D449889269c8ED36D5fc';
+
+export const VoxelRolePartsAddress =
+  '0x9BB846D73e85B00e8f88d82170B930ecaeaa1bCE';
+
+export const MysteryBoxesUSDTAddress =
+  '0xaAD05685a08DA70213885466911e638583654aCD';
+
+// bsc main 0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56
+// bsc test 0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee
+export const BUSDAddress = '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee';
+
+export const officerToken = {
+  address: '',
+  symbol: '',
+  decimals: 18,
+  image: ''
+};

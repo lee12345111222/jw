@@ -1,0 +1,84 @@
+.title {
+  font-family: 'Alibaba PuHuiTi';
+}
+
+.header {
+  position: relative;
+  aspect-ratio: 27 / 8;
+  overflow: hidden;
+}
+
+.header > img {
+  width: 100%;
+}
+
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 150, 200, 0.2);
+  padding-left: 52px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+.header-poster {
+  flex-shrink: 0;
+}
+
+.header-title {
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 128%;
+  color: #e7ddff;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.header-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.02em;
+  color: rgba(185, 178, 203, 0.8);
+  padding: 16px 0 10px;
+}
+
+.poster-container {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 11 / 8;
+}
+
+.poster-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(160.88deg, #441A7C 7.76%, #691985 129.04%); */
+  background-image: radial-gradient(#441a7c, #691985 30%, transparent);
+  filter: blur(104px);
+}
+
+.poster {
+  filter: blur(4px);
+  z-index: 10;
+}
+
+.poster_loaded {
+  transition: all 0.16s ease-out;
+  filter: blur(0);
+}
+
+.poster-scaleby-width {
+  width: 100%;
+}
+
+.poster-scaleby-height {
+  height: 100%;
+}

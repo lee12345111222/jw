@@ -1,0 +1,56 @@
+.investors {
+    background-color: #240845;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .investors {
+      padding: 20px 0;
+    }
+  }
+  
+  .investors-title {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 13px;
+  }
+  
+  .investors-list {
+    padding: 40px 40px 0;
+    display: grid;
+    grid-gap: 9px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    box-sizing: border-box;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .investors-list {
+      grid-template-columns: repeat(4, auto);
+      padding-top: 20px;
+    }
+  }
+  
+  .investors-list div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .investors-list img {
+    width: 100%;
+    transition: all 0.16s ease-out;
+  }
+  
+  .investors-list img:hover {
+    margin-top: -4px;
+    margin-bottom: 4px;
+  }

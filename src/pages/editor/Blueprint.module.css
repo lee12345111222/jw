@@ -1,0 +1,201 @@
+.blueprint-dialog :global(.content) {
+  padding: 0;
+}
+
+.dialog-header {
+  background-color: #222327;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 12px;
+}
+
+.dialog-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dialog-title img {
+  height: 20px;
+}
+
+.blueprint-item {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+.blueprint-card {
+  background-color: #2b2933;
+}
+
+.card-details {
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.blueprint-title {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.blueprint-tags {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dialog-container {
+  width: 1182px;
+  height: 780px;
+  max-height: calc(100vh - 128px);
+  overflow-y: auto;
+}
+
+.blueprint-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.loading {
+  width: 100%;
+}
+
+.blueprint-empty {
+  width: 100%;
+}
+
+.loading-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.style-container {
+  color: #ac5cff;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  gap: 4px;
+}
+
+.style-container img {
+  width: 14px;
+}
+
+.tab-container {
+  background-color: #222327;
+  box-shadow: 0px 4px 4px rgba(21, 28, 34, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: orange; */
+  padding: 0 20px;
+}
+
+.tab-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tabbar {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.tabbar-item {
+  padding: 10px 0;
+  line-height: 18px;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.refresh-icon {
+  width: 18px;
+  cursor: pointer;
+}
+
+.tabbar-item_selected {
+  color: #fff;
+  border-color: #06c4ff;
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+.dropdown {
+  background: #3d4045;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 0;
+}
+
+.dropdown li {
+  /* height: 200px; */
+  padding: 8px 6px;
+  box-sizing: content-box;
+}
+
+.dropdown li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.input {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #858688;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1;
+  padding: 4px 6px;
+  cursor: auto;
+  /* color: purple; */
+}
+
+.dropdown-icon {
+  margin-left: -16px;
+  width: 8px;
+}
+
+.card-btn {
+  font-size: 12px;
+  line-height: 1;
+  padding: 3px 16px;
+}
+
+.success-dialog-footer {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

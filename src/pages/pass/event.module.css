@@ -1,0 +1,428 @@
+.layer {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.top {
+  gap: 12px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.share {
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.tweet-btn {
+  font-size: 14px;
+  font-weight: 600;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 8px;
+}
+
+.dialog {
+  padding: 24px;
+}
+
+.share-meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.passcards {
+  height: 100px;
+}
+
+.passcards img {
+  height: 100%;
+}
+
+.share-title {
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 800;
+}
+
+.share-info {
+  width: 718px;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.share-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 26px;
+}
+
+.item-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.share-item {
+  position: relative;
+  background-color: #262f3b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.share-item-title {
+  background: #303b49;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.share-days {
+  font-size: 34px;
+}
+
+.img-box {
+  background-color: #1a2026;
+  margin: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 240px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.img-box img {
+  width: 140px;
+}
+
+.share-reward {
+  color: #ffeb36;
+}
+
+.share-reward.disable {
+  color: #fff;
+}
+
+.share-btn {
+  width: 188px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mask img {
+  width: 82px;
+  margin-top: 56px;
+}
+
+.time-left {
+  position: relative;
+  width: 942px;
+}
+
+.times {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-size: 92px;
+  font-family: gilroy;
+}
+
+.timer {
+  width: 136px;
+  background-color: rgba(43, 24, 81, 0.4);
+  text-align: center;
+}
+
+.timer-name {
+  font-size: 18px;
+  background-color: #9661df;
+  box-shadow: 0px -4.56379px 4.56379px rgba(77, 22, 147, 0.2);
+}
+
+.event-item {
+  flex-shrink: 1;
+  aspect-ratio: 303 / 268;
+  position: relative;
+  max-height: 340px;
+  height: 100%;
+}
+
+.event-item-box1 {
+  width: 100%;
+  height: calc(100% - 64px);
+  border: 1px solid #9474b9;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.event-item-box2 {
+  height: 100%;
+  width: calc(100% - 64px);
+  border: 1px solid #9474b9;
+  position: absolute;
+  top: 0;
+  left: 32px;
+  box-sizing: border-box;
+}
+
+.event-item-box {
+  height: calc(100% - 32px);
+  width: calc(100% - 32px);
+  border: 1px solid #9474b9;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #9368af;
+  background-color: #431367;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container img {
+  width: 90%;
+  flex-shrink: 1;
+}
+
+.item-text {
+  position: absolute;
+  bottom: 16px;
+}
+
+.item-text,
+.share span {
+  color: #ffeb36;
+}
+
+.item-list {
+  flex-shrink: 1;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 46px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.item-list .event-item:first-child img {
+  margin-top: -32px;
+}
+
+.time {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 1px 1px 0px #000000;
+}
+
+.time img {
+  width: 44px;
+}
+
+.time span {
+  color: #ffeb36;
+}
+
+.calendar {
+  width: 46px;
+  position: relative;
+}
+
+.reminder-container {
+  position: absolute;
+  /* top: 160px; */
+  left: -20px;
+  /* z-index: 8; */
+  animation: reminder 0.8s ease-in-out infinite;
+}
+
+.reminder-arrow {
+  width: 8px;
+  height: 8px;
+  background-color: #ff2171;
+  transform: rotate(45deg);
+  margin-bottom: -4px;
+  margin-left: 36px;
+}
+
+@keyframes reminder {
+  0% {
+    padding-top: 0;
+  }
+  35% {
+    padding-top: 16px;
+  }
+  80% {
+    padding-top: 16px;
+  }
+  100% {
+    padding-top: 0;
+  }
+}
+
+.reminder {
+  width: 80px;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.calendar img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 64px;
+  color: #fff;
+  text-align: center;
+  font-weight: bolder;
+  text-shadow: 5px 5px 0px #000000;
+  margin: 0;
+}
+
+.title2-contaner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title2 {
+  position: relative;
+}
+
+.title2-bg-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  height: 64px;
+  overflow-y: hidden;
+}
+
+.title2-bg-container > img {
+  width: 100%;
+}
+
+.start-time-container {
+  position: relative;
+  padding: 0 108px;
+  height: 64px;
+  line-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.reward {
+  font-size: 40px;
+  line-height: 36px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+  text-shadow: 3px 3px 0px #000000;
+}
+
+.reward img {
+  width: 20px;
+}
+
+.reward div + img {
+  transform: rotateY(180deg);
+}
+
+.foot {
+  width: 100%;
+  color: #dabcf3;
+  font-size: 18px;
+  background: linear-gradient(180deg, #3e276c 0%, #533493 100%);
+  padding: 46px 80px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 0;
+}
+
+.foot .mountain {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: -300px;
+  left: 0;
+  background-position-y: top;
+}
+
+.foot-title {
+  font-weight: bold;
+  margin-bottom: 22px;
+  border-left: 6px solid #dabcf3;
+  padding-left: 8px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.foot ul {
+  margin: 0 0 0 16px;
+  padding: 0;
+}

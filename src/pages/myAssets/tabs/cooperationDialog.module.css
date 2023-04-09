@@ -1,0 +1,132 @@
+.cooperation-img {
+  width: 21px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.cooperation-text {
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.2);
+  margin-top: 6px;
+}
+
+.cooperation-title {
+  font-family: 'PingFang SC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+.cooperation-desc {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fffefe;
+}
+
+.cooperation-options {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fffefe;
+}
+
+.dropdown {
+  background-color: #1f2830;
+  position: absolute;
+  isolation: isolate;
+}
+
+.dropdown li {
+  padding: 17px 12px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: #28333c;
+}
+
+.dropdown li:last-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown li:hover:not(:last-child) {
+  background-color: #28333c;
+  color: #06c4ff;
+}
+
+.cooperation-hover {
+  cursor: pointer;
+}
+.TextCenter {
+  margin-left: 24px;
+}
+.cooperation-hover:hover {
+  color: #06c4ff;
+}
+
+.dialogChange,
+.dialogChange :global(.content) {
+  overflow: visible;
+}
+
+.cooperation-item {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  position: relative;
+  display: flex;
+  gap: 6px;
+}
+.cooperation-remove-color {
+  color: #ff069b;
+  position: relative;
+}
+.invite-result {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.remove-dialog-footer {
+  padding: 0 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.invite-dialog {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.result-container {
+  min-height: 160px;
+  /* max-height: 500px;
+  overflow: scroll; */
+}
+
+.link-container {
+}

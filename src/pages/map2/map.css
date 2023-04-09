@@ -1,0 +1,101 @@
+.road-name-row {
+  color: #5c98ab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  /* background-color: rgba(255, 165, 0, .25); */
+}
+
+.road-name-column {
+  color: #5c98ab;
+  /* height: 1400px; */
+  writing-mode: vertical-lr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.small {
+  color: #4a8e82;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.small-big {
+  font-size: 18px;
+}
+
+.house-name {
+  color: #7ca59d;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.search {
+  overflow: hidden;
+}
+
+.ragion-name {
+  /* font-size: 24px; */
+  font-size: 18px;
+  /* font-weight: bold; */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8fc4d4;
+}
+
+.medium {
+  font-size: 24px;
+}
+
+.big {
+  font-size: 36px;
+  /* -webkit-text-stroke: 1px #fff; */
+  font-weight: bold;
+}
+
+.max {
+  font-size: 48px;
+  /* -webkit-text-stroke: 1px #fff; */
+  font-weight: bold;
+}
+
+/* .ragion-name-small {
+  font-size: 18px;
+} */
+
+.map-detail {
+  display: none !important;
+}
+
+.map-detail-show {
+  animation: showDetail 0.24s;
+}
+
+@keyframes showDetail {
+  from {
+    margin-top: -88px;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+
+.iland-name {
+  color: #00ffee;
+  font-size: 24px;
+  text-align: center;
+}
+
+.iland-name2 {
+  padding-top: 32px;
+  color: #00ffee;
+  font-size: 14px;
+}

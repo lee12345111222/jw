@@ -1,0 +1,20 @@
+.dropdown {
+  background-color: #1f2830;
+}
+
+.dropdown li {
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: #28333c;
+}
+
+.input {
+  cursor: pointer;
+}
+
+.icon {
+  margin-left: -32px;
+}

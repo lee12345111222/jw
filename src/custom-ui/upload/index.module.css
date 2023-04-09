@@ -1,0 +1,26 @@
+.upload {
+  width: 240px;
+  height: 180px;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.upload.error {
+  border-color: #ff2171;
+}
+
+.icon {
+  height: 32px;
+}
+
+.img {
+  object-fit: contain;
+}
+
+.upload input {
+  cursor: pointer;
+  opacity: 0;
+}

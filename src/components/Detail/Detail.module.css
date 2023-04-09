@@ -1,0 +1,152 @@
+.main {
+  padding: 24px;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px 0;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.action-box {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 24px;
+}
+
+.action {
+  font-size: 14px;
+  padding: 0 22px;
+}
+
+.page {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.poster-container {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgb(50, 50, 50);
+}
+
+.row {
+  flex-grow: 1;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  height: 100%;
+}
+
+.detail-box {
+  border-radius: 4px;
+  border: 1px solid rgb(50, 50, 50);
+  background-color: rgba(255, 255, 255, 0.04);
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-title {
+  height: 56px;
+  padding-left: 24px;
+  line-height: 56px;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(50, 50, 50);
+  flex-shrink: 0;
+}
+
+.details {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.content {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.address {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.address.small {
+  font-size: 12px;
+}
+
+.address:hover {
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+span.address:hover {
+  text-decoration: none;
+}
+
+.label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.44);
+}
+
+.colorful-text1 {
+  background: linear-gradient(157deg, #f8a2ff, #9b56f4);
+  font-size: 18px;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+}
+
+.colorful-text2 {
+  background: -webkit-linear-gradient(
+    top,
+    rgb(251, 203, 55),
+    rgb(255, 152, 45)
+  );
+  font-size: 18px;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+}
+
+.table-row {
+  border-top: 1px solid #323232;
+}
+
+.history-table {
+  width: 100%;
+  flex-grow: 1;
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-gap: 32px;
+  grid-template-columns: repeat(5, auto);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.table-last-row {
+  text-align: end;
+}

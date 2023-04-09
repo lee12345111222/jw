@@ -1,0 +1,516 @@
+{
+  "config": {
+    "width": 3894,
+    "height": 3008,
+    "center": [2387, 1499],
+    "tileSize": 512
+  },
+  "shipStations": [
+    {
+      "startX": 113,
+      "startY": -589,
+      "endX": 133,
+      "endY": -569,
+      "name": "Snow Crash 1",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": 443,
+      "startY": -857,
+      "endX": 463,
+      "endY": -837,
+      "name": "Pet Island",
+      "area": "Pet Island"
+    },
+    {
+      "startX": -1429,
+      "startY": 245,
+      "endX": -1409,
+      "endY": 265,
+      "name": "Polygon",
+      "area": "Polygon"
+    },
+    {
+      "startX": -1373,
+      "startY": -1547,
+      "endX": -1353,
+      "endY": -1527,
+      "name": "BTC",
+      "area": "BTC"
+    },
+    {
+      "startX": -503,
+      "startY": -1791,
+      "endX": -483,
+      "endY": -1771,
+      "name": "Adventure Island",
+      "area": "Adventure Island"
+    },
+    {
+      "startX": 150,
+      "startY": 442,
+      "endX": 170,
+      "endY": 462,
+      "name": "Metaverse 1",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -23,
+      "startY": -347,
+      "endX": -3,
+      "endY": -327,
+      "name": "Snow Crash 2",
+      "area": "Snow Crash"
+    },
+    {
+      "startX": -138,
+      "startY": 506,
+      "endX": -118,
+      "endY": 526,
+      "name": "Metaverse 2",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 324,
+      "startY": -118,
+      "endX": 344,
+      "endY": -98,
+      "name": "Central City 1",
+      "area": "Central City"
+    },
+    {
+      "startX": -44,
+      "startY": 280,
+      "endX": -24,
+      "endY": 300,
+      "name": "Central City 2",
+      "area": "Central City"
+    },
+    {
+      "startX": 337,
+      "startY": 1258,
+      "endX": 357,
+      "endY": 1278,
+      "name": "Maze Island",
+      "area": "Maze Island"
+    }
+  ],
+  "busStations": [
+    {
+      "startX": -213,
+      "startY": -39,
+      "endX": -193,
+      "endY": -19,
+      "name": "Shanghai AVE 1",
+      "area": "Central City"
+    },
+    {
+      "startX": -213,
+      "startY": 161,
+      "endX": -193,
+      "endY": 181,
+      "name": "Peace St 2",
+      "area": "Central City"
+    },
+    {
+      "startX": -383,
+      "startY": -39,
+      "endX": -363,
+      "endY": -19,
+      "name": "Shanghai AVE 2",
+      "area": "Central City"
+    },
+    {
+      "startX": -383,
+      "startY": -243,
+      "endX": -363,
+      "endY": -223,
+      "name": "Victory St 2",
+      "area": "Central City"
+    },
+    {
+      "startX": -279,
+      "startY": -243,
+      "endX": -259,
+      "endY": -223,
+      "name": "Victory St 1",
+      "area": "Central City"
+    },
+    {
+      "startX": -213,
+      "startY": -125,
+      "endX": -193,
+      "endY": -105,
+      "name": "Peace St 1",
+      "area": "Central City"
+    },
+    {
+      "startX": -125,
+      "startY": -295,
+      "endX": -105,
+      "endY": -275,
+      "name": "Cstle St 1",
+      "area": "Central City"
+    },
+    {
+      "startX": -61,
+      "startY": -295,
+      "endX": -41,
+      "endY": -275,
+      "name": "Main St 1",
+      "area": "Central City"
+    },
+    {
+      "startX": 25,
+      "startY": -341,
+      "endX": 45,
+      "endY": -321,
+      "name": "Milan AVE 1",
+      "area": "Central City"
+    },
+    {
+      "startX": 25,
+      "startY": -47,
+      "endX": 45,
+      "endY": -27,
+      "name": "Milan AVE 2",
+      "area": "Central City"
+    },
+    {
+      "startX": 91,
+      "startY": 3,
+      "endX": 111,
+      "endY": 23,
+      "name": "View St 2",
+      "area": "Central City"
+    },
+    {
+      "startX": 147,
+      "startY": -21,
+      "endX": 167,
+      "endY": -1,
+      "name": "New York AVE 2",
+      "area": "Central City"
+    },
+    {
+      "startX": 203,
+      "startY": -21,
+      "endX": 223,
+      "endY": -1,
+      "name": "London AVE 3",
+      "area": "Central City"
+    },
+    {
+      "startX": 203,
+      "startY": -147,
+      "endX": 223,
+      "endY": -127,
+      "name": "Lake St 2",
+      "area": "Central City"
+    },
+    {
+      "startX": 303,
+      "startY": -147,
+      "endX": 323,
+      "endY": -127,
+      "name": "Lake St 1",
+      "area": "Central City"
+    },
+    {
+      "startX": 203,
+      "startY": 153,
+      "endX": 223,
+      "endY": 173,
+      "name": "Lake St 3",
+      "area": "Central City"
+    },
+    {
+      "startX": 357,
+      "startY": -21,
+      "endX": 377,
+      "endY": -1,
+      "name": "London AVE 2",
+      "area": "Central City"
+    },
+    {
+      "startX": 297,
+      "startY": 151,
+      "endX": 317,
+      "endY": 171,
+      "name": "Mill St 2",
+      "area": "Central City"
+    },
+    {
+      "startX": 297,
+      "startY": -7,
+      "endX": 317,
+      "endY": 13,
+      "name": "Mill St 1",
+      "area": "Central City"
+    },
+    {
+      "startX": 371,
+      "startY": 25,
+      "endX": 391,
+      "endY": 45,
+      "name": "Mill St 4",
+      "area": "Central City"
+    },
+    {
+      "startX": 371,
+      "startY": 151,
+      "endX": 391,
+      "endY": 171,
+      "name": "Mill St 3",
+      "area": "Central City"
+    },
+    {
+      "startX": 499,
+      "startY": -21,
+      "endX": 519,
+      "endY": -1,
+      "name": "london AVE 1",
+      "area": "Central City"
+    },
+    {
+      "startX": 147,
+      "startY": -235,
+      "endX": 167,
+      "endY": -215,
+      "name": "New York AVE 1",
+      "area": "Central City"
+    },
+    {
+      "startX": 91,
+      "startY": 297,
+      "endX": 111,
+      "endY": 317,
+      "name": "View St 3",
+      "area": "Central City"
+    },
+    {
+      "startX": 91,
+      "startY": -211,
+      "endX": 111,
+      "endY": -191,
+      "name": "View St 1",
+      "area": "Central City"
+    },
+    {
+      "startX": 25,
+      "startY": 233,
+      "endX": 45,
+      "endY": 253,
+      "name": "Milan AVE 3",
+      "area": "Central City"
+    },
+    {
+      "startX": -61,
+      "startY": 219,
+      "endX": -41,
+      "endY": 239,
+      "name": "Hong Kong AVE 2",
+      "area": "Central City"
+    },
+    {
+      "startX": 37,
+      "startY": 351,
+      "endX": 57,
+      "endY": 371,
+      "name": "Singapore AVE 1",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 37,
+      "startY": 479,
+      "endX": 57,
+      "endY": 499,
+      "name": "Goethe St 3",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -15,
+      "startY": 531,
+      "endX": 5,
+      "endY": 551,
+      "name": "Goethe St 2",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -117,
+      "startY": 531,
+      "endX": -97,
+      "endY": 551,
+      "name": "Goethe St 1",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -161,
+      "startY": 581,
+      "endX": -141,
+      "endY": 601,
+      "name": "Hill St 1",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -181,
+      "startY": 719,
+      "endX": -161,
+      "endY": 739,
+      "name": "Toroto AVE",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -97,
+      "startY": 583,
+      "endX": -77,
+      "endY": 603,
+      "name": "Hill St 2",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -97,
+      "startY": 635,
+      "endX": -77,
+      "endY": 655,
+      "name": "Hill St 3",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -71,
+      "startY": 635,
+      "endX": -51,
+      "endY": 655,
+      "name": "Hill St 4",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -71,
+      "startY": 793,
+      "endX": -51,
+      "endY": 813,
+      "name": "Hill St 5",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 5,
+      "startY": 731,
+      "endX": 25,
+      "endY": 751,
+      "name": "Elm St 2",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 69,
+      "startY": 731,
+      "endX": 89,
+      "endY": 751,
+      "name": "Elm St 1",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 123,
+      "startY": 679,
+      "endX": 143,
+      "endY": 699,
+      "name": "Pine St 3",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 123,
+      "startY": 497,
+      "endX": 143,
+      "endY": 517,
+      "name": "Pine St 1",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 123,
+      "startY": 617,
+      "endX": 143,
+      "endY": 637,
+      "name": "Pine St 2",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 163,
+      "startY": 617,
+      "endX": 183,
+      "endY": 637,
+      "name": "Oak St 1",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 69,
+      "startY": 617,
+      "endX": 89,
+      "endY": 637,
+      "name": "Oak St 2",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -69,
+      "startY": 731,
+      "endX": -49,
+      "endY": 751,
+      "name": "Elm St 3",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -161,
+      "startY": 351,
+      "endX": -141,
+      "endY": 371,
+      "name": "Singapore AVE 3",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -117,
+      "startY": 351,
+      "endX": -97,
+      "endY": 371,
+      "name": "Singapore AVE 2",
+      "area": "Metaverse"
+    },
+    {
+      "startX": -315,
+      "startY": 351,
+      "endX": -295,
+      "endY": 371,
+      "name": "Singapore AVE 4",
+      "area": "Metaverse"
+    },
+    {
+      "startX": 147,
+      "startY": 219,
+      "endX": 167,
+      "endY": 239,
+      "name": "Hong Kong AVE 1",
+      "area": "Central City"
+    },
+    {
+      "startX": -61,
+      "startY": -33,
+      "endX": -41,
+      "endY": -13,
+      "name": "Main St 2",
+      "area": "Central City"
+    },
+    {
+      "startX": -125,
+      "startY": 87,
+      "endX": -105,
+      "endY": 107,
+      "name": "Cstle St 3",
+      "area": "Central City"
+    },
+    {
+      "startX": -125,
+      "startY": -199,
+      "endX": -105,
+      "endY": -179,
+      "name": "Cstle St 2",
+      "area": "Central City"
+    }
+  ]
+}

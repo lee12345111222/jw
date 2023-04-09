@@ -1,0 +1,24 @@
+.custom-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1000;
+  display: none;
+}
+
+.custom-modal-container.open {
+  display: block;
+}
+
+.custom-modal-container.backdrop {
+  animation: backdrop 0.16s ease-in forwards;
+}
+
+@keyframes backdrop {
+  to {
+    background: rgba(0, 0, 0, 0.45);
+  }
+}

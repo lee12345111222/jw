@@ -1,0 +1,67 @@
+.btn,
+.btn::before,
+.btn::after {
+  all: initial;
+}
+
+.btn {
+  position: relative;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  box-sizing: content-box;
+  font-family: roboto;
+}
+
+.btn.loading {
+  cursor: auto;
+  opacity: 0.64;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.64;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.hover-box {
+  position: absolute;
+  transition: all 0.16s ease-out;
+}
+
+.hover-box:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.hover-box_clicked:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.loading-icon {
+  margin-left: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-icon svg {
+  animation: loadingIcon linear 1s infinite;
+  opacity: 0.8;
+}
+
+@keyframes loadingIcon {
+  to {
+    transform: rotate(360deg);
+  }
+}
