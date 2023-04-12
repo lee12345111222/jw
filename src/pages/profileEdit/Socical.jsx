@@ -1,4 +1,5 @@
 import styles from './index.module.css';
+import classNames from './index.module.css';
 
 export const Social = () => {
   return (

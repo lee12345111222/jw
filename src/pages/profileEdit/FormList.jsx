@@ -5,7 +5,7 @@ import BorderedBtn from '@/components/BorderedBtn2/index';
 import styles from './index.module.css';
 import styled from 'styled-components';
 
-import { Input, Checkbox, Radio } from 'antd';
+import { Input, Checkbox, Radio, Button } from 'antd';
 
 import Avatar from './assets/avatar.png';
 
@@ -59,11 +59,11 @@ export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
   const [userOption, setUserOption] = useState('btn1');
   const [value, setValue] = useState('');
 
-  const handleChangeName = (e) => {
+  const handleChangeName = e => {
     setUserName(e.target.value);
     setChange(true);
   };
-  const checkOnChange = (e) => {
+  const checkOnChange = e => {
     console.log(e.target.value);
     setValue(e.target.value);
   };
@@ -84,7 +84,8 @@ export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
             <div className={styles['edit-form-tag']}>
               <Btn
                 value={'btn2'}
-                onChange={(e) => setUserOption(e.target.checked)}></Btn>
+                onChange={e => setUserOption(e.target.checked)}
+              ></Btn>
               <div
                 className={
                   styles['edit-form-tag-name'] +
@@ -92,7 +93,8 @@ export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
                   (userOption
                     ? styles[userOption ? 'edit-form-tag-active' : '']
                     : '')
-                }>
+                }
+              >
                 voxelmaster.bnb
               </div>
             </div>
@@ -102,8 +104,14 @@ export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
           <div className={styles['edit-form-title']}>
             <span>Email Address</span>
             <div className={styles['edit-form-title-btn']}>
-              <div className={styles['edit-form-btn-name']}>Remove</div>
-              <div className={styles['edit-form-btn-name']}>Change</div>
+              {/* <div className={styles['edit-form-btn-name']}>Remove</div>
+              <div className={styles['edit-form-btn-name']}>Change</div> */}
+              <Button type="link">
+                <span className={styles['edit-form-btn-name']}>Remove</span>
+              </Button>
+              <Button type="link">
+                <span className={styles['edit-form-btn-name']}>Change</span>
+              </Button>
             </div>
           </div>
           <div className={styles['edit-form-flex']}>
@@ -111,7 +119,7 @@ export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
               placeholder="Please enter"
               disabled
               className={styles['edit-input']}
-              onChange={(e) => {
+              onChange={e => {
                 e.stopPropagation();
                 setEmail(e.target.value);
               }}
@@ -119,7 +127,8 @@ export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
               prefix={
                 <Radius
                   className={styles['edit-prefix-checkbox']}
-                  onChange={checkOnChange}></Radius>
+                  onChange={checkOnChange}
+                ></Radius>
               }
             />
           </div>
@@ -140,7 +149,7 @@ export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
           <Input
             placeholder="Please enter"
             className={styles['edit-input']}
-            onChange={(e) => {
+            onChange={e => {
               e.stopPropagation();
               setEmail(e.target.value);
             }}
@@ -152,7 +161,8 @@ export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
                   ' ' +
                   (email ? styles['edit-text-btn-active'] : '')
                 }
-                onClick={handleSendClick}>
+                onClick={handleSendClick}
+              >
                 {btnText}
               </div>
             }
@@ -161,7 +171,7 @@ export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
             <Input
               placeholder="Enter Code"
               value={code}
-              onChange={(e) => setCode(e.target.value)}
+              onChange={e => setCode(e.target.value)}
               style={{ marginRight: 16 }}
             />
             <BorderedBtn width="88px" disabled={code ? false : true}>

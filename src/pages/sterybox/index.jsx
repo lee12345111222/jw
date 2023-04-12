@@ -37,6 +37,7 @@ import jetpacktag from './img-h/jetpacktag.png';
 import blueprinttag from './img-h/blueprinttag.png';
 
 import blueprint from './img-h/blueprint.png';
+import blueprintDark from './img-h/blueprintDark.png';
 import blueprint1 from './img-h/blueprint1.png';
 import blueprint2 from './img-h/blueprint2.png';
 import blueprint3 from './img-h/blueprint3.png';
@@ -50,12 +51,14 @@ import voxelrole3 from './img-h/voxelrole3.png';
 import voxelrole4 from './img-h/voxelrole4.png';
 
 import genesis from './img-h/genesis.png';
+import genesisDark from './img-h/genesisDark.png';
 import genesis1 from './img-h/genesis1.png';
 import genesis2 from './img-h/genesis2.png';
 import genesis3 from './img-h/genesis3.png';
 import genesis4 from './img-h/genesis4.png';
 
 import jetpack from './img-h/jetpack.png';
+import jetpackDark from './img-h/jetpackDark.png';
 import jetpack1 from './img-h/jetpack1.png';
 import jetpack2 from './img-h/jetpack2.png';
 import jetpack3 from './img-h/jetpack3.png';
@@ -142,6 +145,7 @@ const Sterybox = () => {
       name: 'Name'
     },
     {
+      opacity: 0.65,
       textAlign: 'center',
       name: 'Rarity'
     },
@@ -232,7 +236,8 @@ const Sterybox = () => {
       content:
         'The body will be divided into different levels of rarity according to the type of characters.The rarer the type,the higher the value of the body.The body will have different levels of rarity',
       title: 'Description',
-      toolTip: "10*10: Rubik's Cube、Hylaea、Lovely、Marble 20*20: Coffee、Bank、Restaurant、Shop 30*30: Moon、Country Style、Ocean、Church 40*40: Water Villa、Theater、Pizza、Hospital"
+      toolTip:
+        "10*10: Rubik's Cube、Hylaea、Lovely、Marble 20*20: Coffee、Bank、Restaurant、Shop 30*30: Moon、Country Style、Ocean、Church 40*40: Water Villa、Theater、Pizza、Hospital"
     },
     {
       title: 'Remaining quantity'
@@ -311,7 +316,11 @@ const Sterybox = () => {
                 />
               ))}
               {ShowContentData.map((item) => (
-                <ShowContent content={item.content} title={item.title} toolTip={item.toolTip}/>
+                <ShowContent
+                  content={item.content}
+                  title={item.title}
+                  toolTip={item.toolTip}
+                />
               ))}
               <SmallBoxList smallBoxList={smallBoxList} />
               <WakeButtonList buttonList={ButtonData} />
@@ -344,7 +353,8 @@ const Sterybox = () => {
             <BigBox
               slot="left"
               title={'Genesis Mystery Box 4'}
-              bigImg={genesis}
+              bigImg={genesisDark}
+              bigImg2={genesis}
               footerTitle="1 Basic Part"
               slogo={genessisTag}
             />
@@ -357,7 +367,11 @@ const Sterybox = () => {
                 />
               ))}
               {ShowContentData.map((item) => (
-                <ShowContent content={item.content} title={item.title} />
+                <ShowContent
+                  content={item.content}
+                  title={item.title}
+                  toolTip={item.toolTip}
+                />
               ))}
               <SmallBoxList smallBoxList={smallBoxListTwo} />
               <WakeButtonList buttonList={ButtonData} />
@@ -390,7 +404,8 @@ const Sterybox = () => {
             <BigBox
               slot="left"
               title={'VoxelRole Mystery Box 4'}
-              bigImg={blueprint}
+              bigImg={blueprintDark}
+              bigImg2={blueprint}
               footerTitle="1 Jetpack"
               slogo={blueprinttag}
             />
@@ -403,7 +418,11 @@ const Sterybox = () => {
                 />
               ))}
               {ShowContentData.map((item) => (
-                <ShowContent content={item.content} title={item.title} />
+                <ShowContent
+                  content={item.content}
+                  title={item.title}
+                  toolTip={item.toolTip}
+                />
               ))}
               <SmallBoxList smallBoxList={smallBoxListThree} />
               <WakeButtonList buttonList={ButtonData} />
@@ -436,7 +455,8 @@ const Sterybox = () => {
             <BigBox
               slot="left"
               title={'VoxelRole Mystery Box 4'}
-              bigImg={jetpack}
+              bigImg={jetpackDark}
+              bigImg2={jetpack}
               footerTitle="1 Genesis"
               slogo={jetpacktag}
             />
@@ -449,7 +469,11 @@ const Sterybox = () => {
                 />
               ))}
               {ShowContentData.map((item) => (
-                <ShowContent content={item.content} title={item.title} />
+                <ShowContent
+                  content={item.content}
+                  title={item.title}
+                  toolTip={item.toolTip}
+                />
               ))}
 
               <SmallBoxList smallBoxList={smallBoxListFour} />
@@ -461,7 +485,7 @@ const Sterybox = () => {
       }
     }
   ];
-  
+
   const items3 = [
     {
       status: 'default',
@@ -579,7 +603,6 @@ const Sterybox = () => {
 
   const [showIs, setShowIS] = useState(false);
 
-
   return (
     <MainPage title="Mystery Box">
       <div className="content">
@@ -636,7 +659,7 @@ const Sterybox = () => {
           />{' '} */}
           </p>
           <div style={{ display: showIs ? 'block' : 'none' }}>
-            <GameTabs showLength={6} items={items3} defaultActiveKey="31"  />
+            <GameTabs showLength={6} items={items3} defaultActiveKey="31" />
           </div>
           <div style={{ display: showIs ? 'none' : 'block' }}>
             <GameTabs items={items3} defaultActiveKey="31" />

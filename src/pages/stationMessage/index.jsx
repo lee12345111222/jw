@@ -269,18 +269,12 @@ const NoticeDetail = ({ data }) => (
   </div>
 );
 
-export const NoticeDialog = ({ open, onCancel, setNoticeCssClose }) => {
+export const NoticeDialog = ({ open, onCancel }) => {
   useEffect(() => {
     document.body.style.overscrollBehaviorY = 'none';
     return () => {
       document.body.style.overscrollBehaviorY = 'auto';
     };
-  }, []);
-  useEffect(() => {
-    return () => {
-      setNoticeCssClose(true);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const [detail, setDetail] = useState();
   console.log(open, 'open');

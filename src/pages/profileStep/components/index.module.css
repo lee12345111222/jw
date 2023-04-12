@@ -3,6 +3,9 @@
     border-radius: 6px;
     padding-top: 24px;
     padding-left: 24px;
+    justify-content: space-between;
+    display: flex;
+
 }
 
 
@@ -97,6 +100,8 @@ color: rgba(255, 255, 255, 0.65);
 }
 .leftImg{
     margin-right: 12px;
+    width: 32px;
+    height: 32px;
 }
 .h80{
     height: 80%;
@@ -108,4 +113,9 @@ color: rgba(255, 255, 255, 0.65);
 }
 .items_end{
     align-items: end;
+}
+.rightImg{
+   display: flex;
+   height: 80%;
+   align-items: end;
 }

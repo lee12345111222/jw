@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import Rectangle1 from './asstes/Rectangle1.png';
 import Rectangle2 from './asstes/Rectangle2.png';
 import Rectangle3 from './asstes/Rectangle3.png';

@@ -2,7 +2,7 @@ import React, { useCallback, useState, Suspense, useRef } from 'react';
 
 import styled from 'styled-components';
 
-import { debounce, reject } from 'lodash-es';
+import { debounce } from 'lodash-es';
 
 import { useTranslation } from 'react-i18next';
 
@@ -62,8 +62,6 @@ import styles from './index.module.css';
 import load from '@/utils/load';
 
 import Star from './components/star';
-import { NoticeDialog } from '../stationMessage/index';
-import { useEffect } from 'react';
 
 const {
   logo,
@@ -176,8 +174,6 @@ export default function Index() {
   const [hasScroll, setHasScroll] = useState(false);
 
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(true);
-  const [noticeOpen, setNoticeOpen] = useState(false);
-  const [noticeCssClose, setNoticeCssClose] = useState(true);
   // useSessionStorageState('video_state');
 
   const [showVideo, setShowVideo] = useState(!isVideoModalOpen);
@@ -250,14 +246,6 @@ export default function Index() {
 
   return (
     <MainPage alpha>
-      {noticeCssClose ? null : (
-        <NoticeDialog
-          open={noticeOpen}
-          setNoticeCssClose={setNoticeCssClose}
-          onCancel={() => setNoticeOpen(false)}
-        />
-      )}
-
       <div
         onScroll={handleScroll}
         style={{
@@ -266,19 +254,6 @@ export default function Index() {
           scrollBehavior: 'smooth'
           // marginTop: '-56px'
         }}>
-        <button
-          style={{ position: 'absolute', zIndex: 999 }}
-          onClick={() => {
-            new Promise((resolve, reject)=>{
-              setNoticeCssClose(false);
-              resolve()
-            }).then(()=>{
-              setNoticeOpen(true);
-            })
-          }}>
-          notice btn
-        </button>
-
         <Page
           style={{
             background:

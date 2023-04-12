@@ -91,7 +91,6 @@ const User = ({ account, displayBalance }) => {
   const { chainId, reset: walletReset } = useWallet();
   // const [showMessageDialog, setShowMessageDialog] = useState(false);
   const [showNoticeDialog, setShowNoticeDialog] = useState(false);
-  const [noticeCssClose, setNoticeCssClose] = useState(true);
 
   const { data: { data: { balance } } = { data: { balance: 0 } } } = useApi2(
     () => getmgbalance({ address: account }),
@@ -199,24 +198,13 @@ const User = ({ account, displayBalance }) => {
 
       {isTest && (
         <>
-          {noticeCssClose ? null : (
+          {showNoticeDialog && (
             <NoticeDialog
               open={showNoticeDialog}
-              setNoticeCssClose={setNoticeCssClose}
               onCancel={handleCloseNoticeDialog}
             />
           )}
-          <div
-            onClick={() =>
-              new Promise((resolve, reject) => {
-                setNoticeCssClose(false);
-                resolve();
-              }).then(() => {
-                setShowNoticeDialog(true);
-              })
-            }>
-            占位
-          </div>
+          <div onClick={() => setShowNoticeDialog(true)}>占位</div>
         </>
       )}
       <ClickAwayListener onClickAway={() => setShowProfile(false)}>

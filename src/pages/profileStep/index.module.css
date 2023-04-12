@@ -75,7 +75,7 @@
 }
 
 .poster {
-  /* width: 100%; */
+  width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
@@ -239,8 +239,8 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-.user-edit {
-}
+/* .user-edit {
+} */
 
 .card-list-title {
   font-style: normal;

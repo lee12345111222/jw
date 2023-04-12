@@ -1,25 +1,25 @@
-import { useMemo, useCallback, useState } from "react";
+import { useMemo, useCallback, useState } from 'react';
 
-import { thumbPlus } from "@/api/share";
+import { thumbPlus } from '@/api/share';
 
-import useApi from "@/hooks/useApi";
+import useApi from '@/hooks/useApi';
 
-import { video_server } from "@/constant/env/index";
+import { video_server } from '@/constant/env/index';
 
-import { Tooltip } from "antd";
+import { Tooltip } from 'antd';
 
-import likeIcon from "@/assets/icon/like-icon.png";
-import likeplusIcon from "@/assets/icon/likeplus-icon.png";
-import previewCount from "@/assets/icon/preview-count.png";
-import imageLoading from "@/components/ImageBox/assets/imageLoading.png";
-import Cover from "./assets/cover.png";
-import Delete from "./assets/delete.png";
-import Hide from "./assets/hide.png";
-import TipBtn from "./assets/tipBtn.png";
+import likeIcon from '@/assets/icon/like-icon.png';
+import likeplusIcon from '@/assets/icon/likeplus-icon.png';
+import previewCount from '@/assets/icon/preview-count.png';
+import imageLoading from '@/components/ImageBox/assets/imageLoading.png';
+import Cover from './assets/cover.png';
+import Delete from './assets/delete.png';
+import Hide from './assets/hide.png';
+import TipBtn from './assets/tipBtn.png';
 
-import styles from "./index.module.css";
+import styles from './index.module.css';
 
-import { showShortAddress } from "@/utils/common";
+import { showShortAddress } from '@/utils/common';
 
 export default function CardItem({
   item: {
@@ -48,7 +48,7 @@ export default function CardItem({
   );
 
   const hasThumb = useMemo(
-    () => (thumbList ? thumbList.find((id) => id === uuid) : false),
+    () => (thumbList ? thumbList.find(id => id === uuid) : false),
     [thumbList, uuid]
   );
 
@@ -67,7 +67,7 @@ export default function CardItem({
   });
 
   const onThumb = useCallback(
-    async (e) => {
+    async e => {
       e.stopPropagation();
       const myToken = await token();
       if (!myToken) return;
@@ -82,41 +82,41 @@ export default function CardItem({
         login_token: myToken,
         uuid,
         address: account,
-        operator: hasThumb ? "cancel" : "thumb",
+        operator: hasThumb ? 'cancel' : 'thumb',
       });
     },
     [account, hasThumb, run, thumbed, token, uuid]
   );
   const titleEle = (
-    <div className={styles["tooltip-box"]}>
-      <div className={styles["tooltip-item"]}>
+    <div className={styles['tooltip-box']}>
+      <div className={styles['tooltip-item']}>
         <img src={Cover} alt="" />
-        <div className={styles["tooltip-content"]}>Change Cover</div>
+        <div className={styles['tooltip-content']}>Change Cover</div>
       </div>
-      <div className={styles["tooltip-item"]}>
+      <div className={styles['tooltip-item']}>
         <img src={Hide} alt="" />
         <div
-          className={styles["tooltip-content"]}
+          className={styles['tooltip-content']}
           onClick={() => setHide(true)}
         >
           Hide Space
         </div>
       </div>
-      <div className={styles["tooltip-item"]}>
+      <div className={styles['tooltip-item']}>
         <img src={Delete} alt="" />
-        <div className={styles["tooltip-content"]}>Delete Space</div>
+        <div className={styles['tooltip-content']}>Delete Space</div>
       </div>
     </div>
   );
   const UserInfo = ({ name, owner, tokenId }) => (
-    <div className={styles["user-container"]}>
-      <div className={styles["user-info"]}>
+    <div className={styles['user-container']}>
+      <div className={styles['user-info']}>
         <div className={styles.avatar}>
           <img src={`${video_server}/images/${tokenId}.png`} alt="" />
         </div>
-        <div className={styles["user-names"]}>
-          <span>{owner ? owner.slice(0, 11) : "-"}</span>
-          <span className={styles["user-address"]}>
+        <div className={styles['user-names']}>
+          <span>{owner ? owner.slice(0, 11) : '-'}</span>
+          <span className={styles['user-address']}>
             {showShortAddress(owner)}
           </span>
         </div>
@@ -127,20 +127,20 @@ export default function CardItem({
         trigger="click"
         overlayClassName="profile-tooltip-class"
       >
-        <div className={styles["tip-btn"]}>
+        <div className={styles['tip-btn']}>
           <img src={TipBtn} alt="" />
         </div>
       </Tooltip>
     </div>
   );
   return (
-    <div className={styles["discover-item"]} onClick={onClick}>
+    <div className={styles['discover-item']} onClick={onClick}>
       <Poster src={src ? src : `${head_img}?r=${randomTime}`} hide={hide} />
       {!hideAccount ? (
         <ItemInfo>
           <TitleBox>
-            <span>{name || "-"}</span>
-            <div className={styles["info-list"]}>
+            <span>{name || '-'}</span>
+            <div className={styles['info-list']}>
               <div>
                 <img
                   onClick={onThumb}
@@ -169,24 +169,23 @@ export default function CardItem({
 
 export const Poster = ({ src, hide }) => {
   const [onLoaded, setOnLoaded] = useState(false);
-  console.log(hide, "hide");
   return (
     <div
       style={{ backgroundImage: `url(${imageLoading})` }}
-      className={styles["image-box"]}
+      className={styles['image-box']}
     >
       {hide ? (
-        <div className={styles["poster-hide"]}>
-          <div className={styles["poster-item"]}>
+        <div className={styles['poster-hide']}>
+          <div className={styles['poster-item']}>
             <img src={Hide} alt="" />
-            <div className={styles["poster-content"]}>Hide Space</div>
+            <div className={styles['poster-content']}>Hide Space</div>
           </div>
         </div>
       ) : null}
 
       <img
         onLoad={() => setOnLoaded(true)}
-        className={`${styles.poster} ${onLoaded ? styles.onload : ""}`}
+        className={`${styles.poster} ${onLoaded ? styles.onload : ''}`}
         src={src}
         alt=""
       />
@@ -195,8 +194,20 @@ export const Poster = ({ src, hide }) => {
 };
 
 export const ItemInfo = ({ children }) => (
-  <div className={styles["item-info"]}>{children}</div>
+  <div className={styles['item-info']}>{children}</div>
 );
 export const TitleBox = ({ children }) => (
-  <div className={styles["title-box"]}>{children}</div>
+  <div className={styles['title-box']}>{children}</div>
+);
+
+export const UserInfo = ({ name, owner, tokenId }) => (
+  <div className={styles['user-info']}>
+    <div className={styles.avatar}>
+      <img src={`${video_server}/images/${tokenId}.png`} alt="" />
+    </div>
+    <div className={styles['user-names']}>
+      <span>{owner ? owner.slice(0, 11) : '-'}</span>
+      <span className={styles['user-address']}>{showShortAddress(owner)}</span>
+    </div>
+  </div>
 );

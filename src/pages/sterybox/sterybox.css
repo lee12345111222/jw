@@ -89,6 +89,9 @@
     align-items: center;
 }
 
+.underline{
+    cursor: pointer;
+}
 .underline:hover {
     text-decoration: underline;
 }

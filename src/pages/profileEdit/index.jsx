@@ -10,7 +10,7 @@ import classNames from 'classnames/bind';
 
 //import { useHistory } from "react-router-dom";
 
-import Modal from '@/ui/modal/index';
+import Modal from './modal/index';
 
 import styles from './index.module.css';
 
@@ -18,6 +18,7 @@ import styles from './index.module.css';
 
 import Img1 from './assets/1.png';
 import CloseImg from './assets/2.png';
+import Close from './assets/close.png';
 import Img3 from './assets/3.png';
 
 const modalImgList = [Img1, Img1, Img3, Img3, Img3];
@@ -35,11 +36,11 @@ export default function ProfileEdit({ hideMain }) {
   const [visible, setVisible] = useState(false);
   const [btnText, setBtnText] = useState('Send a code');
   const btnTextRef = useRef(60);
-  const onKeyChange = (val) => {
+  const onKeyChange = val => {
     console.log(val, 'onValuesChange');
     setTabkey(val);
   };
-  const handleSendClick = (e) => {
+  const handleSendClick = e => {
     e.stopPropagation();
     setBtnText('pedding');
     console.log(btnTextRef);
@@ -58,15 +59,18 @@ export default function ProfileEdit({ hideMain }) {
   const dom = (
     <div className={styles['edit-modal-container']}>
       <div className={styles['modal-top']}>
+        <div className={styles['modal-top-left']}>
+          <img className={styles['modal-top-img']} src={CloseImg} alt="" />
+          <div className={styles['modal-top-title']}>select NFT</div>
+        </div>
         <img
-          className={styles['modal-top-img']}
-          src={CloseImg}
+          className={styles['modal-top-close']}
+          src={Close}
           onClick={() => {
             setVisible(false);
           }}
           alt=""
-        />
-        <div className={styles['modal-top-title']}>select NFT</div>
+        ></img>
       </div>
       <div className={styles['modal-content']}>
         {modalImgList.map((ele, idx) => (
@@ -93,8 +97,9 @@ export default function ProfileEdit({ hideMain }) {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                height: '100%'
-              }}>
+                height: '100%',
+              }}
+            >
               {children}
             </div>
           )
@@ -102,7 +107,7 @@ export default function ProfileEdit({ hideMain }) {
     [hideMain]
   );
 
-  const getTabName = (idx) => {
+  const getTabName = idx => {
     switch (Math.abs(idx - tabKey)) {
       case 0:
         return 'edit-tab-top';
@@ -119,20 +124,23 @@ export default function ProfileEdit({ hideMain }) {
         <Modal
           open={visible}
           backdrop={styles['edit-modal']}
-          onEscape={() => setVisible(false)}>
+          onEscape={() => setVisible(false)}
+        >
           {dom}
         </Modal>
         <div className={styles['edit-main']}>
           <div className={styles['edit-tab']}>
             <div
               className={styles[getTabName(1)]}
-              onClick={() => onKeyChange(1)}>
+              onClick={() => onKeyChange(1)}
+            >
               <div></div>
               General
             </div>
             <div
               className={styles[getTabName(2)]}
-              onClick={() => onKeyChange(2)}>
+              onClick={() => onKeyChange(2)}
+            >
               <div></div>
               Social Profiles
             </div>
@@ -145,13 +153,15 @@ export default function ProfileEdit({ hideMain }) {
             <FormList
               btnText={btnText}
               setVisible={setVisible}
-              handleSendClick={handleSendClick}></FormList>
+              handleSendClick={handleSendClick}
+            ></FormList>
           ) : null}
           {tabKey === 2 ? (
             <Social
               btnText={btnText}
               setVisible={setVisible}
-              handleSendClick={handleSendClick}></Social>
+              handleSendClick={handleSendClick}
+            ></Social>
           ) : null}
         </div>
       </Page>

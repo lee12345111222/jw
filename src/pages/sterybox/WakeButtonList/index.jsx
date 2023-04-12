@@ -15,6 +15,7 @@ import Content4 from './assets/1002.png';
 import Content5 from './assets/1003.png';
 import Content6 from './assets/1004.png';
 import Content7 from './assets/1005.png';
+import Loading from './assets/loading.png';
 
 const ImgArr = [
   Content1,
@@ -28,6 +29,7 @@ const ImgArr = [
 
 const WakeButtonList = ({ buttonList }) => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   console.log(modalVisible, 'modalVisible');
   const onCancel = () => {
@@ -43,24 +45,39 @@ const WakeButtonList = ({ buttonList }) => {
         open={modalVisible}
         headerStyle={{ width: 680 }}
         header={
-          <Header>
-            <img className="btnDialogTitle" src={Title} alt="" />
-            <CloseIcon onClick={onCancel} className="close-icon" />
-          </Header>
+          loading ? (
+            <></>
+          ) : (
+            <Header>
+              <img className="btnDialogTitle" src={Title} alt="" />
+              <CloseIcon onClick={onCancel} className="close-icon" />
+            </Header>
+          )
         }
         footer={
-          <Footer>
-            <Button height="28px" width="132px" onClick={onConfirm}>
-              conform
-            </Button>
-            <div className="footerBtnText">{'View on Polygon >>'}</div>
-          </Footer>
+          loading ? (
+            <></>
+          ) : (
+            <Footer>
+              <Button height="28px" width="132px" onClick={onConfirm}>
+                conform
+              </Button>
+              <div className="footerBtnText">{'View on Polygon >>'}</div>
+            </Footer>
+          )
         }>
-        <DialogContent>
-          {ImgArr.map((ele, idx) => (
-            <img className="contentItem" src={ele} alt="" />
-          ))}
-        </DialogContent>
+        {loading ? (
+          <LoaddingContent>
+            <img src={Loading} alt="" />
+            <div>Opening the Mystery box</div>
+          </LoaddingContent>
+        ) : (
+          <DialogContent>
+            {ImgArr.map((ele, idx) => (
+              <img className="contentItem" src={ele} alt="" />
+            ))}
+          </DialogContent>
+        )}
       </Div>
       <div
         style={{
@@ -74,7 +91,12 @@ const WakeButtonList = ({ buttonList }) => {
             title={item.title}
             key={index}
             click={() => {
+              setLoading(true);
               setModalVisible(true);
+
+              setTimeout(() => {
+                setLoading(false);
+              }, 2000);
             }}
           />
         ))}
@@ -102,6 +124,22 @@ const DialogContent = styled.div`
   .contentItem {
     width: 104px;
     margin: 0 12px 23px;
+  }
+`;
+const LoaddingContent = styled.div`
+  width: 374px;
+  height: 194px;
+  text-align: center;
+  padding-top: 43px;
+  img {
+    margin-bottom: 30px;
+  }
+  div {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.85);
   }
 `;
 const Header = styled.div`

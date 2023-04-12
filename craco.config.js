@@ -21,10 +21,10 @@ module.exports = {
             new TerserPlugin({
               minify: TerserPlugin.swcMinify,
               terserOptions: {
-                compress: {
-                  drop_debugger: IS_PROD,
-                  drop_console: IS_PROD
-                }
+                // compress: {
+                //   drop_debugger: IS_PROD,
+                //   drop_console: IS_PROD
+                // }
               }
             })
           ]

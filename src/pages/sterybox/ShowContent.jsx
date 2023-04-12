@@ -24,6 +24,8 @@ const ShowContent = ({ content, title, contentHover, toolTip }) => {
           <Tooltip
             title={toolTip}
             color="#1A2026"
+            placement="topLeft"
+            arrowPointAtCenter={true}
             getPopupContainer={(triggerNode) => {
               return triggerNode.parentNode || document.body;
             }}
@@ -32,7 +34,12 @@ const ShowContent = ({ content, title, contentHover, toolTip }) => {
               fontSize: 14
             }}>
             <img
-              style={{ width: 14, marginLeft: 7, position: 'relative' }}
+              style={{
+                width: 14,
+                marginLeft: 7,
+                position: 'relative',
+                cursor: 'pointer'
+              }}
               src={Exclamation}
               alt=""></img>
           </Tooltip>
