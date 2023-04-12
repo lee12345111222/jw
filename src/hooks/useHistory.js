@@ -40,41 +40,41 @@ export default function useHistory() {
   const { run } = useApi(isAllowed, { manual: true });
   const dispatch = useDispatch();
 
-  const push = useCallback(
-    async (url) => {
-      if (isMobile()) {
-        return message.info('is mobile');
-      }
+  // const push = useCallback(
+  //   async (url) => {
+  //     if (isMobile()) {
+  //       return message.info('is mobile');
+  //     }
 
-      if (checkEnv()) {
-        return history.push(url);
-      }
+  //     if (checkEnv()) {
+  //       return history.push(url);
+  //     }
 
-      if (allowedList.find((item) => url === item)) {
-        return history.push(url);
-      }
+  //     if (allowedList.find((item) => url === item)) {
+  //       return history.push(url);
+  //     }
 
-      if (whiteList.find((item) => url === item)) {
-        if (userStatus) {
-          return history.push(url);
-        }
+  //     if (whiteList.find((item) => url === item)) {
+  //       if (userStatus) {
+  //         return history.push(url);
+  //       }
 
-        const token = await getToken();
-        const { code } = await run({ login_token: token });
-        if (+code === 200) {
-          dispatch(setStatus(true));
-          return history.push(url);
-        } else {
-          return message.info(
-            'You are not eligible for internal testing, please contact the platform to apply'
-          );
-        }
-      }
+  //       const token = await getToken();
+  //       const { code } = await run({ login_token: token });
+  //       if (+code === 200) {
+  //         dispatch(setStatus(true));
+  //         return history.push(url);
+  //       } else {
+  //         return message.info(
+  //           'You are not eligible for internal testing, please contact the platform to apply'
+  //         );
+  //       }
+  //     }
 
-      message.info('Coming soon');
-    },
-    [checkEnv, dispatch, getToken, history, run, userStatus]
-  );
+  //     message.info('Coming soon');
+  //   },
+  //   [checkEnv, dispatch, getToken, history, run, userStatus]
+  // );
 
   const open = useCallback(
     (url) => {
@@ -90,5 +90,5 @@ export default function useHistory() {
     [checkEnv, t]
   );
 
-  return { ...history, push, open };
+  return { ...history, open };
 }

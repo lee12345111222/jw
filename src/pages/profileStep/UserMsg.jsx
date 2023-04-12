@@ -31,7 +31,7 @@ export const UserMsg = memo(() => {
       </div>
       <div className={styles['user-edit']}>
         <BorderedBtn width="88px" onClick={() => history.push('/profileEdit')}>
-          Edit
+          Edit1
         </BorderedBtn>
       </div>
     </div>
