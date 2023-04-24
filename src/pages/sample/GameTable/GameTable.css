@@ -1,0 +1,37 @@
+.szxfontjbtow {
+    font-family: 'Proto Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 14px;
+
+    background: linear-gradient(122.67deg, #6DC7E0 26.87%, #3BAAC6 73.58%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.szxfontjb {
+    opacity: 1 !important;
+    height: 60px;
+
+    color: #FCFF57;
+
+    background: #FFBC00;
+    font-weight: 900;
+    font-size: 16px;
+    font-family: 'Proto Sans';
+    font-weight: 400;
+
+    text-shadow: 0px 1.51456px 1.51456px rgba(0, 0, 0, 0.25);
+
+    background-image: -webkit-linear-gradient(106.47deg, #FCFF57 -10.54%, #FFDB1F 116.77%);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    -webkit-animation: hue6sinfinitelinear;
+
+}

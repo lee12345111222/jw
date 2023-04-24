@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import GameTable from './GameTable/index';
 
 export default function Sample() {
   return (
@@ -81,6 +82,54 @@ const BoxCardRight = () => {
   return <div>BoxCardRight</div>;
 };
 
+const tableData = [
+  {
+    Name: 'Black Skeleton Cap',
+    Rarity: 'SSR',
+    Probability: '33%',
+  },
+  {
+    Name: 'Orange Cap',
+    Rarity: 'SSR',
+    Probability: '33%',
+  },
+  {
+    Name: 'Little Punk Cap',
+    Rarity: 'SSR',
+    Probability: '33%',
+  },
+  {
+    Name: 'Police Cap',
+    Rarity: 'SSR',
+    Probability: '33%',
+  },
+];
+const TableHeader = [
+  {
+    opacity: 0.65,
+    textAlign: 'left',
+    name: 'Name',
+  },
+  {
+    opacity: 0.65,
+    textAlign: 'center',
+    name: 'Rarity',
+  },
+  {
+    opacity: 0.65,
+    textAlign: 'right',
+    name: 'Probability',
+  },
+];
 const Probability = ({ selcetKey }) => {
-  return <div>Probability {selcetKey}</div>;
+  return (
+    <>
+      <div>Probability {selcetKey}</div>
+      <GameTable
+        gameTableHeader={TableHeader}
+        gameTableBody={tableData}
+        theme="blue"
+      />
+    </>
+  );
 };
