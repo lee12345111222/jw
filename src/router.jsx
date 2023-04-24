@@ -64,15 +64,14 @@ export default function AppRouter() {
 
       <Route exact path="/mysterybox" component={MysteryBox} />
       <Route exact path="/mysterybox/detail/:type/:id" component={BoxDetail} />
+      <Route exact path="/sample" component={Index}>
+        <Suspense fallback={''}>
+          <Sample />
+        </Suspense>
+      </Route>
 
       {isTest && (
         <>
-          <Route exact path="/sample" component={Index}>
-            <Suspense fallback={''}>
-              <Sample />
-            </Suspense>
-          </Route>
-
           <Route exact path="/audio" component={Index}>
             <Suspense fallback={''}>
               <AudioTest />
@@ -84,7 +83,7 @@ export default function AppRouter() {
       <Route exact path="/market">
         <Redirect
           to={{
-            pathname: '/market/parcel'
+            pathname: '/market/parcel',
           }}
         />
       </Route>
@@ -100,7 +99,7 @@ export default function AppRouter() {
       <Route exact path="/create">
         <Redirect
           to={{
-            pathname: '/create/parcel'
+            pathname: '/create/parcel',
           }}
         />
       </Route>
@@ -133,7 +132,7 @@ export default function AppRouter() {
       <Route exact path="/space-editor">
         <Redirect
           to={{
-            pathname: '/space-editor/parcel'
+            pathname: '/space-editor/parcel',
           }}
         />
       </Route>
@@ -141,7 +140,7 @@ export default function AppRouter() {
       <Route exact path="/assets">
         <Redirect
           to={{
-            pathname: '/assets/parcel'
+            pathname: '/assets/parcel',
           }}
         />
       </Route>

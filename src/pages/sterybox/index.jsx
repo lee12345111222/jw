@@ -436,6 +436,8 @@ const Sterybox = () => {
   ];
 
   const [showIs, setShowIS] = useState(false);
+  const [headActiveKey, setHeadActiveKey] = useState('41');
+  const [contentActiveKey, setContentActiveKey] = useState('31');
 
   return (
     <MainPage title="Mystery Box">
@@ -452,7 +454,8 @@ const Sterybox = () => {
           </div>
           <SteryTabs
             items={items}
-            defaultActiveKey="41"
+            defaultActiveKey={headActiveKey}
+            setPropsKey={val => setHeadActiveKey(val)}
             changeTabs={indexkey => {
               if (indexkey === '41') {
                 setShowIS(false);
@@ -527,7 +530,11 @@ const Sterybox = () => {
             <SteryTabs showLength={6} items={items3} defaultActiveKey="31" />
           </div> */}
           <div>
-            <SteryTabs items={items3} defaultActiveKey="31">
+            <SteryTabs
+              items={items3}
+              defaultActiveKey={contentActiveKey}
+              setPropsKey={val => setContentActiveKey(val)}
+            >
               <GameTable
                 gameTableHeader={TableHeader}
                 gameTableBody={tableData}

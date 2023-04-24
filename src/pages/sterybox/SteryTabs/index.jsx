@@ -29,6 +29,7 @@ const SteryTabs = ({
   showLength = 4,
   changeTabs,
   children,
+  setPropsKey,
 }) => {
   let ref = useRef();
   let show = null;
@@ -67,6 +68,7 @@ const SteryTabs = ({
         };
       })
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ActiveKey]);
 
   return (
@@ -82,7 +84,7 @@ const SteryTabs = ({
             cursor: 'pointer',
           }}
         >
-          <img src={leftimg} />
+          <img src={leftimg} alt="" />
         </span>
         <Box
           ref={ref}
@@ -116,56 +118,11 @@ const SteryTabs = ({
                   );
                   setTimeout(() => {
                     setActiveKey(tabhead.key);
+                    setPropsKey(tabhead.key);
                   }, 100);
                 }}
-                onMouseLeave={() => {
-                  setTableState(
-                    tabState.map(items => {
-                      if (tabhead.key === items.key) {
-                        if (items.status === 'select') {
-                          return {
-                            ...items,
-                            status: 'select',
-                          };
-                        } else {
-                          return {
-                            ...items,
-                            status: 'default',
-                          };
-                        }
-                      } else {
-                        return {
-                          ...items,
-                        };
-                      }
-                    })
-                  );
-                }}
-                onMouseEnter={() => {
-                  setTableState(
-                    tabState.map(items => {
-                      if (tabhead.key === items.key) {
-                        if (items.status === 'select') {
-                          return {
-                            ...items,
-                            status: 'select',
-                          };
-                        } else {
-                          return {
-                            ...items,
-                            status: 'flot',
-                          };
-                        }
-                      } else {
-                        return {
-                          ...items,
-                        };
-                      }
-                    })
-                  );
-                }}
               >
-                <img src={tabhead.header.img[tabhead.status]}></img>
+                <img src={tabhead.header.img[tabhead.status]} alt=""></img>
                 <FontBox
                   style={{ color: tabhead.header.color[tabhead.status] }}
                 >
@@ -181,7 +138,7 @@ const SteryTabs = ({
             ref.current.scrollLeft = ref.current.scrollLeft + (minWidth + 20);
           }}
         >
-          <img src={rightimg} />
+          <img src={rightimg} alt="" />
         </span>
       </div>
 
