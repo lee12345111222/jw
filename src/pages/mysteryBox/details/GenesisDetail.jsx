@@ -20,7 +20,7 @@ import {
   Details,
   CongratulationDialog,
   LoadingDialog2,
-  iconList
+  iconList,
 } from './PartDetail';
 
 import Detail from '@/components/Detail/index';
@@ -28,7 +28,7 @@ import Detail from '@/components/Detail/index';
 import {
   confirmTransaction,
   parsingBuyMysteryBoxEvtIds,
-  sleep
+  sleep,
 } from '@/utils/common';
 
 import partListPro from '../partsListPro.json';
@@ -41,7 +41,7 @@ const partsNameListPro = {
   0: '10 × 10',
   1: '20 × 20',
   2: '30 × 30',
-  3: '40 × 40'
+  3: '40 × 40',
 };
 
 export default function GenesisDetail() {
@@ -95,7 +95,7 @@ export default function GenesisDetail() {
 
   const [{ dialogLoading, showDialog }, setState] = useSetState({
     dialogLoading: false,
-    showDialog: false
+    showDialog: false,
   });
 
   const [polygonUrl, setPolygonUrl] = useState();
@@ -129,16 +129,16 @@ export default function GenesisDetail() {
       const receipt = await confirmTransaction(web3, txHash);
       const ids = parsingBuyMysteryBoxEvtIds(receipt.logs);
 
-      const idsNum = ids.map((v) => ({
+      const idsNum = ids.map(v => ({
         id: web3.utils.hexToNumber(v.id),
-        quantity: web3.utils.hexToNumber(v.quantity)
+        quantity: web3.utils.hexToNumber(v.quantity),
       }));
 
       setIds(idsNum);
       setState({ dialogLoading: false });
       setState({ showDialog: true });
       congratulationAnimate();
-      setCount((count) => (count > 0 ? count - 1 : count));
+      setCount(count => (count > 0 ? count - 1 : count));
     } catch (e) {
       setState({ dialogLoading: false });
       message.error('Open failed');
@@ -157,7 +157,7 @@ export default function GenesisDetail() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '4px'
+              gap: '4px',
             }}
           >
             {count !== null && (
@@ -206,7 +206,7 @@ const TablePro = () => {
 
   const titleList = useMemo(
     () =>
-      Object.keys(partsNameListPro).map((key) => (
+      Object.keys(partsNameListPro).map(key => (
         <li
           key={key}
           className={key === selectedTab ? styles['selected-title'] : ''}
@@ -221,7 +221,7 @@ const TablePro = () => {
 
   const partsList = useMemo(
     () =>
-      Object.keys(partListPro).map((key) =>
+      Object.keys(partListPro).map(key =>
         partListPro[key].map(({ name, rarity, ratio }) => (
           <Fragment key={name}>
             <div>{name}</div>

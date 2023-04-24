@@ -1,0 +1,23 @@
+.tabHeaditem{
+    margin-right: 20px;
+    cursor: pointer;
+    min-width: 110px;
+    display: flex;
+    align-items: center;
+}
+.tabHeaditem:last-child{
+    margin-right: 0px;
+}
+
+.tabBody{
+    position: relative;
+}
+.tabBodyItem{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.leftBox{
+    width: 47%;
+}

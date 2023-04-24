@@ -17,11 +17,12 @@ import styles from './index.module.css';
 //import { Form } from "antd";
 
 import Img1 from './assets/1.png';
+import Img2 from './assets/avatar2.png';
 import CloseImg from './assets/2.png';
 import Close from './assets/close.png';
 import Img3 from './assets/3.png';
 
-const modalImgList = [Img1, Img1, Img3, Img3, Img3];
+const modalImgList = [Img1, Img2, Img3, Img2, Img3];
 
 const cx = classNames.bind(styles);
 
@@ -152,6 +153,8 @@ export default function ProfileEdit({ hideMain }) {
           {tabKey === 1 ? (
             <FormList
               btnText={btnText}
+              modalImgList={modalImgList}
+              imgKey={imgKey}
               setVisible={setVisible}
               handleSendClick={handleSendClick}
             ></FormList>

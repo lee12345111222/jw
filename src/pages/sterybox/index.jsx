@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import MainPage from '@/components/MainPage/index';
-import GameTabs from '@/components/GameTabs/index';
+import SteryTabs from './SteryTabs/index';
 // left BigBox
 import BigBox from './BigBox';
 import ShowContent from './ShowContent.jsx';
-import ShowContentAdr from './ShowContentAdr.jsx';
+//import ShowContentAdr from './ShowContentAdr.jsx';
 import './sterybox.css';
 import styled, { keyframes } from 'styled-components';
 
@@ -66,7 +65,7 @@ import jetpack4 from './img-h/jetpack4.png';
 
 import gailv from './img-h/gail.png';
 ////import wen from './img-h/wen.png';
-import WakeButon from './WakeButton/index';
+//import WakeButon from './WakeButton/index';
 import SmallBoxList from './SmallBoxList/index.jsx';
 import FooterBox from './FooterBox';
 import WakeButtonList from './WakeButtonList/index.jsx';
@@ -90,7 +89,7 @@ import default001 from './img-h/default001.png';
 import default002 from './img-h/default002.png';
 import default003 from './img-h/default003.png';
 import default004 from './img-h/default004.png';
-import Dialog from '@/ui/modal/index';
+//import Dialog from '@/ui/modal/index';
 import GameTable from './GameTable/index';
 
 const Sterybox = () => {
@@ -98,134 +97,134 @@ const Sterybox = () => {
     {
       Name: 'Black Skeleton Cap',
       Rarity: 'SSR',
-      Probability: '33%'
+      Probability: '33%',
     },
     {
       Name: 'Orange Cap',
       Rarity: 'SSR',
-      Probability: '33%'
+      Probability: '33%',
     },
     {
       Name: 'Little Punk Cap',
       Rarity: 'SSR',
-      Probability: '33%'
+      Probability: '33%',
     },
     {
       Name: 'Police Cap',
       Rarity: 'SSR',
-      Probability: '33%'
-    }
+      Probability: '33%',
+    },
   ];
   const tableData2 = [
     {
       Name: 'Whiht Skeleton Cap',
       Rarity: 'SSR',
-      Probability: '50%'
+      Probability: '50%',
     },
     {
       Name: 'Blue Cap',
       Rarity: 'SSR',
-      Probability: '50%'
+      Probability: '50%',
     },
     {
       Name: 'Shoes',
       Rarity: 'SSR',
-      Probability: '50%'
+      Probability: '50%',
     },
     {
       Name: 'Police shoes',
       Rarity: 'SSR',
-      Probability: '50%'
-    }
+      Probability: '50%',
+    },
   ];
   const TableHeader = [
     {
       opacity: 0.65,
       textAlign: 'left',
-      name: 'Name'
+      name: 'Name',
     },
     {
       opacity: 0.65,
       textAlign: 'center',
-      name: 'Rarity'
+      name: 'Rarity',
     },
     {
       opacity: 0.65,
       textAlign: 'right',
-      name: 'Probability'
-    }
+      name: 'Probability',
+    },
   ];
   const smallBoxList = [
     {
       smallimg: voxelrole1,
-      count: 5
+      count: 5,
     },
     {
       smallimg: voxelrole2,
-      count: 15
+      count: 15,
     },
     {
       smallimg: voxelrole3,
-      count: 9
+      count: 9,
     },
     {
       smallimg: voxelrole4,
-      count: 1
-    }
+      count: 1,
+    },
   ];
   const smallBoxListThree = [
     {
       smallimg: blueprint1,
-      count: 5
+      count: 5,
     },
     {
       smallimg: blueprint2,
-      count: 15
+      count: 15,
     },
     {
       smallimg: blueprint3,
-      count: 9
+      count: 9,
     },
     {
       smallimg: blueprint4,
-      count: 1
-    }
+      count: 1,
+    },
   ];
   const smallBoxListTwo = [
     {
       smallimg: genesis1,
-      count: 5
+      count: 5,
     },
     {
       smallimg: genesis2,
-      count: 15
+      count: 15,
     },
     {
       smallimg: genesis3,
-      count: 9
+      count: 9,
     },
     {
       smallimg: genesis4,
-      count: 1
-    }
+      count: 1,
+    },
   ];
   const smallBoxListFour = [
     {
       smallimg: jetpack1,
-      count: 5
+      count: 5,
     },
     {
       smallimg: jetpack2,
-      count: 15
+      count: 15,
     },
     {
       smallimg: jetpack3,
-      count: 9
+      count: 9,
     },
     {
       smallimg: jetpack4,
-      count: 1
-    }
+      count: 1,
+    },
   ];
   const ShowContentData = [
     // {
@@ -236,45 +235,46 @@ const Sterybox = () => {
       content:
         'The body will be divided into different levels of rarity according to the type of characters.The rarer the type,the higher the value of the body.The body will have different levels of rarity',
       title: 'Description',
+      contentHover: false,
       toolTip:
-        "10*10: Rubik's Cube、Hylaea、Lovely、Marble 20*20: Coffee、Bank、Restaurant、Shop 30*30: Moon、Country Style、Ocean、Church 40*40: Water Villa、Theater、Pizza、Hospital"
+        "10*10: Rubik's Cube、Hylaea、Lovely、Marble 20*20: Coffee、Bank、Restaurant、Shop 30*30: Moon、Country Style、Ocean、Church 40*40: Water Villa、Theater、Pizza、Hospital",
     },
     {
-      title: 'Remaining quantity'
-    }
+      title: 'Remaining quantity',
+    },
   ];
 
   const ShowContentAdr = [
     {
       content: '0Xx013FB150ca2c42Ce8e81AA8EE31761313e086326',
-      title: 'Contract address'
-    }
+      title: 'Contract address',
+    },
   ];
 
   const ShowContentAdrJet = [
     {
       content: '8Xx01369750cas8e1Ce8e81AA8EE622625565686326',
-      title: 'Contract address'
-    }
+      title: 'Contract address',
+    },
   ];
   //const ShowContentAdrr = '0Xx013FB150ca2c42Ce8e81AA8EE31761313e086326';
   const ButtonData = [
     {
       title: '10*10',
-      theme: 'blues'
+      theme: 'blues',
     },
     {
       title: '20*20',
-      theme: 'orange'
+      theme: 'orange',
     },
     {
       title: '30*30',
-      theme: 'blueq'
+      theme: 'blueq',
     },
     {
       title: '40*40',
-      theme: 'yellow'
-    }
+      theme: 'yellow',
+    },
   ];
 
   const items = [
@@ -287,47 +287,15 @@ const Sterybox = () => {
           default: red1,
           flot: red2,
           click: red3,
-          select: red4
+          select: red4,
         },
         color: {
           default: '#FFFFFF73',
           flot: '#42CBF5',
           click: '#42CBF5',
-          select: '#06C4FF'
-        }
+          select: '#06C4FF',
+        },
       },
-      children: () => {
-        return (
-          <FooterBox>
-            <BigBox
-              slot="left"
-              title={'VoxelRole Mystery Box 4'}
-              bigImg={voxelroleDark}
-              bigImg2={voxelrole}
-              footerTitle="1 Blueprint"
-              slogo={voxeltag}
-            />
-            <div slot="right">
-              {ShowContentAdrJet.map((item) => (
-                <ShowContent
-                  content={item.content}
-                  contentHover={true}
-                  title={item.title}
-                />
-              ))}
-              {ShowContentData.map((item) => (
-                <ShowContent
-                  content={item.content}
-                  title={item.title}
-                  toolTip={item.toolTip}
-                />
-              ))}
-              <SmallBoxList smallBoxList={smallBoxList} />
-              <WakeButtonList buttonList={ButtonData} />
-            </div>
-          </FooterBox>
-        );
-      }
     },
     {
       status: 'default',
@@ -338,47 +306,15 @@ const Sterybox = () => {
           default: yel1,
           flot: yel2,
           click: yel3,
-          select: yel4
+          select: yel4,
         },
         color: {
           default: '#FFFFFF73',
           flot: '#42CBF5',
           click: '#42CBF5',
-          select: '#06C4FF'
-        }
+          select: '#06C4FF',
+        },
       },
-      children: () => {
-        return (
-          <FooterBox>
-            <BigBox
-              slot="left"
-              title={'Genesis Mystery Box 4'}
-              bigImg={genesisDark}
-              bigImg2={genesis}
-              footerTitle="1 Basic Part"
-              slogo={genessisTag}
-            />
-            <div slot="right">
-              {ShowContentAdr.map((item) => (
-                <ShowContent
-                  content={item.content}
-                  contentHover={true}
-                  title={item.title}
-                />
-              ))}
-              {ShowContentData.map((item) => (
-                <ShowContent
-                  content={item.content}
-                  title={item.title}
-                  toolTip={item.toolTip}
-                />
-              ))}
-              <SmallBoxList smallBoxList={smallBoxListTwo} />
-              <WakeButtonList buttonList={ButtonData} />
-            </div>
-          </FooterBox>
-        );
-      }
     },
     {
       status: 'default',
@@ -389,47 +325,15 @@ const Sterybox = () => {
           default: pro1,
           flot: pro2,
           click: pro3,
-          select: pro4
+          select: pro4,
         },
         color: {
           default: '#FFFFFF73',
           flot: '#42CBF5',
           click: '#42CBF5',
-          select: '#06C4FF'
-        }
+          select: '#06C4FF',
+        },
       },
-      children: () => {
-        return (
-          <FooterBox>
-            <BigBox
-              slot="left"
-              title={'VoxelRole Mystery Box 4'}
-              bigImg={blueprintDark}
-              bigImg2={blueprint}
-              footerTitle="1 Jetpack"
-              slogo={blueprinttag}
-            />
-            <div slot="right">
-              {ShowContentAdrJet.map((item) => (
-                <ShowContent
-                  content={item.content}
-                  contentHover={true}
-                  title={item.title}
-                />
-              ))}
-              {ShowContentData.map((item) => (
-                <ShowContent
-                  content={item.content}
-                  title={item.title}
-                  toolTip={item.toolTip}
-                />
-              ))}
-              <SmallBoxList smallBoxList={smallBoxListThree} />
-              <WakeButtonList buttonList={ButtonData} />
-            </div>
-          </FooterBox>
-        );
-      }
     },
     {
       status: 'default',
@@ -440,50 +344,16 @@ const Sterybox = () => {
           default: blue1,
           flot: blue2,
           click: blue3,
-          select: blue4
+          select: blue4,
         },
         color: {
           default: '#FFFFFF73',
           flot: '#42CBF5',
           click: '#42CBF5',
-          select: '#06C4FF'
-        }
+          select: '#06C4FF',
+        },
       },
-      children: () => {
-        return (
-          <FooterBox>
-            <BigBox
-              slot="left"
-              title={'VoxelRole Mystery Box 4'}
-              bigImg={jetpackDark}
-              bigImg2={jetpack}
-              footerTitle="1 Genesis"
-              slogo={jetpacktag}
-            />
-            <div slot="right">
-              {ShowContentAdr.map((item) => (
-                <ShowContent
-                  content={item.content}
-                  contentHover={true}
-                  title={item.title}
-                />
-              ))}
-              {ShowContentData.map((item) => (
-                <ShowContent
-                  content={item.content}
-                  title={item.title}
-                  toolTip={item.toolTip}
-                />
-              ))}
-
-              <SmallBoxList smallBoxList={smallBoxListFour} />
-              {/* <ShowContentAdr content={ShowContentAdr} /> */}
-              <WakeButtonList buttonList={ButtonData} />
-            </div>
-          </FooterBox>
-        );
-      }
-    }
+    },
   ];
 
   const items3 = [
@@ -496,24 +366,15 @@ const Sterybox = () => {
           default: default001,
           flot: xuanfu001,
           click: click001,
-          select: select001
+          select: select001,
         },
         color: {
           default: '#FFFFFF73',
           flot: '#42CBF5',
           click: '#42CBF5',
-          select: '#06C4FF'
-        }
+          select: '#06C4FF',
+        },
       },
-      children: () => {
-        return (
-          <GameTable
-            gameTableHeader={TableHeader}
-            gameTableBody={tableData}
-            theme="blue"
-          />
-        );
-      }
     },
     {
       status: 'default',
@@ -524,24 +385,15 @@ const Sterybox = () => {
           default: default002,
           flot: xuanfu002,
           click: click002,
-          select: select002
+          select: select002,
         },
         color: {
           default: '#FFFFFF73',
           flot: '#42CBF5',
           click: '#42CBF5',
-          select: '#06C4FF'
-        }
+          select: '#06C4FF',
+        },
       },
-      children: () => {
-        return (
-          <GameTable
-            gameTableHeader={TableHeader}
-            gameTableBody={tableData2}
-            theme="blue"
-          />
-        );
-      }
     },
     {
       status: 'default',
@@ -552,24 +404,15 @@ const Sterybox = () => {
           default: default003,
           flot: xuanfu003,
           click: click003,
-          select: select003
+          select: select003,
         },
         color: {
           default: '#FFFFFF73',
           flot: '#42CBF5',
           click: '#42CBF5',
-          select: '#06C4FF'
-        }
+          select: '#06C4FF',
+        },
       },
-      children: () => {
-        return (
-          <GameTable
-            gameTableHeader={TableHeader}
-            gameTableBody={tableData}
-            theme="blue"
-          />
-        );
-      }
     },
     {
       status: 'default',
@@ -580,25 +423,16 @@ const Sterybox = () => {
           default: default004,
           flot: xuanfu004,
           click: click004,
-          select: select004
+          select: select004,
         },
         color: {
           default: '#FFFFFF73',
           flot: '#42CBF5',
           click: '#42CBF5',
-          select: '#06C4FF'
-        }
+          select: '#06C4FF',
+        },
       },
-      children: () => {
-        return (
-          <GameTable
-            gameTableHeader={TableHeader}
-            gameTableBody={tableData2}
-            theme="blue"
-          />
-        );
-      }
-    }
+    },
   ];
 
   const [showIs, setShowIS] = useState(false);
@@ -616,17 +450,46 @@ const Sterybox = () => {
             <img src={wen} alt="" />{' '}
           </div> */}
           </div>
-          <GameTabs
+          <SteryTabs
             items={items}
             defaultActiveKey="41"
-            changeTabs={(indexkey) => {
+            changeTabs={indexkey => {
               if (indexkey === '41') {
                 setShowIS(false);
               } else {
                 setShowIS(true);
               }
             }}
-          />
+          >
+            <FooterBox>
+              <BigBox
+                slot="left"
+                title={'VoxelRole Mystery Box 4'}
+                bigImg={voxelroleDark}
+                bigImg2={voxelrole}
+                footerTitle="1 Blueprint"
+                slogo={voxeltag}
+              />
+              <div slot="right">
+                {ShowContentAdrJet.map(item => (
+                  <ShowContent
+                    content={item.content}
+                    contentHover={true}
+                    title={item.title}
+                  />
+                ))}
+                {ShowContentData.map(item => (
+                  <ShowContent
+                    content={item.content}
+                    title={item.title}
+                    toolTip={item.toolTip}
+                  />
+                ))}
+                <SmallBoxList smallBoxList={smallBoxList} />
+                <WakeButtonList buttonList={ButtonData} />
+              </div>
+            </FooterBox>
+          </SteryTabs>
           <p style={{ display: 'flex', marginTop: '40px' }}>
             <img width={30} src={gailv} alt="" />{' '}
             <span
@@ -636,8 +499,9 @@ const Sterybox = () => {
                 fontSize: '20px',
                 lineHeight: '30px',
                 fontWeight: 500,
-                color: '#FFFFFFD9'
-              }}>
+                color: '#FFFFFFD9',
+              }}
+            >
               Probability
             </span>
           </p>
@@ -649,8 +513,9 @@ const Sterybox = () => {
               lineHeight: '17px',
               fontWeight: '400',
               color: 'rgba(255, 255, 255, 0.45)',
-              marginBottom: '30px'
-            }}>
+              marginBottom: '30px',
+            }}
+          >
             Mystery Box Rarity Ranking List, Click Classification To View Other{' '}
             {/* <img
             src={wen}
@@ -658,11 +523,17 @@ const Sterybox = () => {
             style={{ cursor: 'pointer', marginLeft: '8px' }}
           />{' '} */}
           </p>
-          <div style={{ display: showIs ? 'block' : 'none' }}>
-            <GameTabs showLength={6} items={items3} defaultActiveKey="31" />
-          </div>
-          <div style={{ display: showIs ? 'none' : 'block' }}>
-            <GameTabs items={items3} defaultActiveKey="31" />
+          {/* <div style={{ display: showIs ? 'block' : 'none' }}>
+            <SteryTabs showLength={6} items={items3} defaultActiveKey="31" />
+          </div> */}
+          <div>
+            <SteryTabs items={items3} defaultActiveKey="31">
+              <GameTable
+                gameTableHeader={TableHeader}
+                gameTableBody={tableData}
+                theme="blue"
+              />
+            </SteryTabs>
           </div>
         </div>
       </div>
@@ -707,7 +578,5 @@ const StyleTitle = styled.div`
   animation: ${colorfullText} 1.6s cubic-bezier(0.445, 0.05, 0.55, 0.95)
     alternate infinite;
 `;
-
-Sterybox.propTypes = {};
 
 export default Sterybox;

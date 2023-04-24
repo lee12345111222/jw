@@ -8,6 +8,8 @@ import styled from 'styled-components';
 import { Input, Checkbox, Radio, Button } from 'antd';
 
 import Avatar from './assets/avatar.png';
+import { useDispatch, useSelector } from 'react-redux';
+//import useHistory from '@/hooks/useHistory';
 
 const Btn = styled(Radio)`
   margin-right: 16px !important;
@@ -51,156 +53,197 @@ const Radius = styled(Checkbox)`
     border-left: 0;
   }
 `;
-export const FormList = memo(({ btnText, setVisible, handleSendClick }) => {
-  const [userName, setUserName] = useState('Lian');
-  const [email, setEmail] = useState();
-  const [code, setCode] = useState();
-  const [change, setChange] = useState(false);
-  const [userOption, setUserOption] = useState('btn1');
-  const [value, setValue] = useState('');
+export const FormList = memo(
+  ({ btnText, setVisible, handleSendClick, modalImgList, imgKey }) => {
+    //const history = useHistory();
 
-  const handleChangeName = e => {
-    setUserName(e.target.value);
-    setChange(true);
-  };
-  const checkOnChange = e => {
-    console.log(e.target.value);
-    setValue(e.target.value);
-  };
-  const getFormEle = () => {
-    return change ? (
-      <div className="edit-form-antd">
-        <div className={styles['edit-form-item']}>
-          <div className={styles['edit-form-title']}>Username</div>
-          <Radio.Group value={value} onChange={checkOnChange}>
-            <div className={styles['edit-form-flex']}>
-              <Btn value={'btn1'}></Btn>
-              <Input
-                placeholder="Please enter"
-                value={userName}
-                onChange={handleChangeName}
-              />
-            </div>
-            <div className={styles['edit-form-tag']}>
-              <Btn
-                value={'btn2'}
-                onChange={e => setUserOption(e.target.checked)}
-              ></Btn>
-              <div
-                className={
-                  styles['edit-form-tag-name'] +
-                  ' ' +
-                  (userOption
-                    ? styles[userOption ? 'edit-form-tag-active' : '']
-                    : '')
-                }
-              >
-                voxelmaster.bnb
+    const name = useSelector(state => {
+      // console.log(state, 'state');
+      return state.user.name;
+    });
+
+    const [userName, setUserName] = useState(name);
+    const [email, setEmail] = useState('');
+    const [code, setCode] = useState();
+    const [change, setChange] = useState(false);
+    const [userOption, setUserOption] = useState('btn1');
+    const [value, setValue] = useState('');
+    const [verifyLoad, setVerifyLoad] = useState(false);
+    const [verifyBtn, setVerifyBtn] = useState(false);
+
+    //const dispatch = useDispatch();
+
+    const handleChangeName = e => {
+      setUserName(e.target.value);
+      setChange(true);
+    };
+    const checkOnChange = e => {
+      console.log(e);
+      setValue(e.target.value);
+    };
+    const handleVeryfyClick = () => {
+      setVerifyLoad(true);
+      setTimeout(() => {
+        setVerifyLoad(false);
+        setVerifyBtn(true);
+      }, 3000);
+    };
+    // const onSave = () => {
+    //   if (userOption === "btn1") {
+    //     dispatch(setProfileName(userName));
+    //   } else {
+    //     dispatch(setProfileName("voxelmaster.bnb"));
+    //   }
+    //   history.push('/profileStep')
+    // };
+    const getFormEle = () => {
+      return change ? (
+        <div className="edit-form-antd">
+          <div className={styles['edit-form-item']}>
+            <div className={styles['edit-form-title']}>Username</div>
+            <Radio.Group value={value} onChange={checkOnChange}>
+              <div className={styles['edit-form-flex']}>
+                <Btn value={'btn1'}></Btn>
+                <Input
+                  placeholder="Please enter"
+                  value={userName}
+                  onChange={handleChangeName}
+                />
+              </div>
+              <div className={styles['edit-form-tag']}>
+                <Btn
+                  value={'btn2'}
+                  onChange={e => setUserOption(e.target.checked)}
+                ></Btn>
+                <div
+                  className={
+                    styles['edit-form-tag-name'] +
+                    ' ' +
+                    (userOption
+                      ? styles[userOption ? 'edit-form-tag-active' : '']
+                      : '')
+                  }
+                >
+                  voxelmaster.bnb
+                </div>
+              </div>
+            </Radio.Group>
+          </div>
+          <div className={styles['edit-form-item']}>
+            <div className={styles['edit-form-title']}>
+              <span>Email Address</span>
+              <div className={styles['edit-form-title-btn']}>
+                {/* <div className={styles['edit-form-btn-name']}>Remove</div>
+              <div className={styles['edit-form-btn-name']}>Change</div> */}
+                <Button type="link">
+                  <span className={styles['edit-form-btn-name']}>Remove</span>
+                </Button>
+                <Button type="link">
+                  <span className={styles['edit-form-btn-name']}>Change</span>
+                </Button>
               </div>
             </div>
-          </Radio.Group>
-        </div>
-        <div className={styles['edit-form-item']}>
-          <div className={styles['edit-form-title']}>
-            <span>Email Address</span>
-            <div className={styles['edit-form-title-btn']}>
-              {/* <div className={styles['edit-form-btn-name']}>Remove</div>
-              <div className={styles['edit-form-btn-name']}>Change</div> */}
-              <Button type="link">
-                <span className={styles['edit-form-btn-name']}>Remove</span>
-              </Button>
-              <Button type="link">
-                <span className={styles['edit-form-btn-name']}>Change</span>
-              </Button>
+            <div className={styles['edit-form-flex']}>
+              <Input
+                placeholder=""
+                disabled
+                className={styles['edit-input']}
+                onChange={e => {
+                  e.stopPropagation();
+                  setEmail(e.target.value);
+                }}
+                value={email}
+                prefix={
+                  <Radius
+                    className={styles['edit-prefix-checkbox']}
+                    onChange={checkOnChange}
+                    value={email}
+                  ></Radius>
+                }
+              />
             </div>
           </div>
-          <div className={styles['edit-form-flex']}>
+        </div>
+      ) : (
+        <>
+          <div className={styles['edit-form-item']}>
+            <div className={styles['edit-form-title']}>Username</div>
             <Input
               placeholder="Please enter"
-              disabled
+              value={userName}
+              onChange={handleChangeName}
+            />
+          </div>
+          <div className={styles['edit-form-item']}>
+            <div className={styles['edit-form-title']}>Email Address</div>
+            <Input
+              placeholder="Please enter"
               className={styles['edit-input']}
               onChange={e => {
                 e.stopPropagation();
                 setEmail(e.target.value);
               }}
               value={email}
-              prefix={
-                <Radius
-                  className={styles['edit-prefix-checkbox']}
-                  onChange={checkOnChange}
-                ></Radius>
+              suffix={
+                <div
+                  className={
+                    styles['edit-text-btn'] +
+                    ' ' +
+                    (email ? styles['edit-text-btn-active'] : '')
+                  }
+                  onClick={handleSendClick}
+                >
+                  {btnText}
+                </div>
               }
             />
-          </div>
-        </div>
-      </div>
-    ) : (
-      <>
-        <div className={styles['edit-form-item']}>
-          <div className={styles['edit-form-title']}>Username</div>
-          <Input
-            placeholder="Please enter"
-            value={userName}
-            onChange={handleChangeName}
-          />
-        </div>
-        <div className={styles['edit-form-item']}>
-          <div className={styles['edit-form-title']}>Email Address</div>
-          <Input
-            placeholder="Please enter"
-            className={styles['edit-input']}
-            onChange={e => {
-              e.stopPropagation();
-              setEmail(e.target.value);
-            }}
-            value={email}
-            suffix={
-              <div
-                className={
-                  styles['edit-text-btn'] +
-                  ' ' +
-                  (email ? styles['edit-text-btn-active'] : '')
-                }
-                onClick={handleSendClick}
+            <div className={styles['edit-form-code']}>
+              <Input
+                placeholder="Enter Code"
+                value={code}
+                onChange={e => setCode(e.target.value)}
+                style={{ marginRight: 16 }}
+              />
+              <BorderedBtn
+                width="88px"
+                disabled={code ? false : true}
+                loading={verifyLoad}
+                onClick={handleVeryfyClick}
               >
-                {btnText}
-              </div>
-            }
-          />
-          <div className={styles['edit-form-code']}>
-            <Input
-              placeholder="Enter Code"
-              value={code}
-              onChange={e => setCode(e.target.value)}
-              style={{ marginRight: 16 }}
+                Verify
+              </BorderedBtn>
+            </div>
+          </div>
+        </>
+      );
+    };
+    return (
+      <div className={styles['edit-content']}>
+        <div className={styles['edit-content-top']}>
+          <div className={styles['edit-user-avatar']}>
+            <img
+              src={imgKey || imgKey === 0 ? modalImgList[imgKey] : Avatar}
+              alt=""
             />
-            <BorderedBtn width="88px" disabled={code ? false : true}>
-              Verify
+          </div>
+          <div className={styles['edit-user-btn']}>
+            <BorderedBtn width="88px" onClick={() => setVisible(true)}>
+              Select
             </BorderedBtn>
           </div>
         </div>
-      </>
-    );
-  };
-  return (
-    <div className={styles['edit-content']}>
-      <div className={styles['edit-content-top']}>
-        <div className={styles['edit-user-avatar']}>
-          <img src={Avatar} alt="" />
-        </div>
-        <div className={styles['edit-user-btn']}>
-          <BorderedBtn width="88px" onClick={() => setVisible(true)}>
-            Select
-          </BorderedBtn>
-        </div>
-      </div>
-      <div className={styles['edit-form']}>
-        {getFormEle()}
+        <div className={styles['edit-form']}>
+          {getFormEle()}
 
-        <div className={styles['edit-form-btn']}>
-          <BorderedBtn width="128px">Save</BorderedBtn>
+          <div className={styles['edit-form-btn']}>
+            <BorderedBtn width="128px" disabled={!verifyBtn}>
+              Save
+            </BorderedBtn>
+          </div>
         </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
+
+// onClick={onSave}

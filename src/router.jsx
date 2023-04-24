@@ -167,9 +167,6 @@ export default function AppRouter() {
       }
 
       <Route exact path="/profile" component={Profile} />
-      <Route exact path="/profileStep" component={ProfileStep} />
-      <Route exact path="/profileEdit" component={ProfileEdit} />
-
 
       {isTest && (
         <>
@@ -177,8 +174,9 @@ export default function AppRouter() {
 
           <Route exact path="/press" component={Media} />
 
-          
+          <Route exact path="/profileStep" component={ProfileStep} />
 
+          <Route exact path="/profileEdit" component={ProfileEdit} />
 
           <Route exact path="/sterybox" component={Sterybox} />
 

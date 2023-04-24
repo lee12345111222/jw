@@ -27,8 +27,10 @@ import useSetState from '@/hooks/useSetState';
 // import Eth from './assets/eth.png';
 // import Polygan from './assets/polygan.png';
 // import Maket from './assets/maket.png';
+import noData from './assets/noData.png';
 
 import WalletCard from 'src/pages/profileStep/WalletCard/index.jsx';
+import { Flex } from '@/components/Basic';
 
 const cx = classNames.bind(styles);
 
@@ -115,6 +117,8 @@ export default function ProfileStep({ hideMain }) {
     // window.open(`/preview/${uuid}`);
   }, []);
 
+  console.log(account);
+
   const ItemList = useMemo(
     () =>
       list.map(item => {
@@ -122,11 +126,12 @@ export default function ProfileStep({ hideMain }) {
           <div key={item.uuid}>
             <CardItem
               onClick={() => handleItemClick(item.uuid)}
-              item={item}
+              item={{ ...item, owner: account }}
               token={getLoginToken}
               thumbList={thumbList || []}
-              account={account}
+              //account={account}
               src={item.height}
+              owner={account}
             />
           </div>
         );
@@ -191,7 +196,7 @@ export default function ProfileStep({ hideMain }) {
           <CardList
             minWidth="100%"
             style={{
-              padding: '40px 81px 64px',
+              padding: '40px 0px 64px',
               height: 'auto',
               borderBottom: 'solid 1px rgba(74, 80, 87, 0.2)',
               gridTemplateColumns: 'auto',
@@ -207,14 +212,16 @@ export default function ProfileStep({ hideMain }) {
             // onScrollToBottom={getNextPage}
             minWidth="320px"
             style={{
-              padding: '40px 81px 43px',
+              padding: '40px 0px 43px',
               height: 'auto',
               gridgap: '24px',
             }}
             headers={<div className={cx('card-list-title')}>share</div>}
             loading={loading}
+            emptyMsg="No Sharing"
+            emptyImg={noData}
           >
-            {ItemList}
+            {/* {ItemList} */}
           </CardList>
         </div>
         <Footer bgColor="#1A2026" />

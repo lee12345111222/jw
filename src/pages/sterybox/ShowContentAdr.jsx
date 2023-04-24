@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './sterybox.css';
 
@@ -14,8 +13,9 @@ const ShowContentAdr = ({ content, title, contentHover }) => {
           //marginTop: '24px',
           fontSize: '14px',
           lineHeight: '16.8px',
-          color: '#FFFFFFD9'
-        }}>
+          color: '#FFFFFFD9',
+        }}
+      >
         Contract address
       </p>
       <p
@@ -27,14 +27,13 @@ const ShowContentAdr = ({ content, title, contentHover }) => {
           fontSize: '14px',
           lineHeight: '16.8px',
           color: '#FFFFFF73',
-          cursor: 'pointer'
-        }}>
+          cursor: 'pointer',
+        }}
+      >
         {content}
       </p>
     </>
   );
 };
-
-ShowContentAdr.propTypes = {};
 
 export default ShowContentAdr;

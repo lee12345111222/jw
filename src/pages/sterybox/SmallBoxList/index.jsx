@@ -17,10 +17,11 @@ const SmallBoxList = ({ smallBoxList, height }) => {
         //paddingRight: '28px',
         padding: '3px 28px',
         marginTop: '-16px',
-        alignItems: 'center'
-      }}>
-      {smallBoxList.map((item) => {
-        console.log(item);
+        alignItems: 'center',
+      }}
+    >
+      {smallBoxList.map(item => {
+        //console.log(item);
         return <SmallBoxItem smallImg={item.smallimg} count={item.count} />;
       })}
 
@@ -37,11 +38,11 @@ const SmallBoxList = ({ smallBoxList, height }) => {
   );
 };
 SmallBoxList.defaultProps = {
-  height: 60
+  height: 60,
 };
 SmallBoxList.propTypes = {
   smallBoxList: PropTypes.array.isRequired,
-  height: PropTypes.number
+  height: PropTypes.number,
 };
 
 export default SmallBoxList;

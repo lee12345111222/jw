@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import styles from './index.module.css';
 
 //import Vector from './img-h/Vector.png';
@@ -23,8 +23,9 @@ const BigBox = ({ title, bigImg, bigImg2, footerTitle, slogo }) => {
           textAlign: 'center',
           marginTop: '20px',
           marginBottom: '0',
-          color: ' rgba(255, 255, 255, 0.85)'
-        }}>
+          color: ' rgba(255, 255, 255, 0.85)',
+        }}
+      >
         Quantity included:
         <span
           style={{
@@ -32,8 +33,9 @@ const BigBox = ({ title, bigImg, bigImg2, footerTitle, slogo }) => {
             //padding: '2.4px',
             marginLeft: '16px',
             marginRight: '12px',
-            borderRadius: '2px'
-          }}>
+            borderRadius: '2px',
+          }}
+        >
           {' '}
           <img src={slogo} alt="" />
         </span>
@@ -43,7 +45,5 @@ const BigBox = ({ title, bigImg, bigImg2, footerTitle, slogo }) => {
     </div>
   );
 };
-
-BigBox.propTypes = {};
 
 export default BigBox;

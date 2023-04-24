@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 import WakeButton from '../WakeButton/index.jsx';
 import BorderedBtn from '@/components/BorderedBtn2/index.jsx';
 import Dialog from '@/ui/dialog/index.jsx';
+
+import {
+  congratulationAnimate,
+  LoadingDialog,
+} from '@/pages/mysteryBox/details/PartDetail.jsx';
+
 import Title from './assets/content.png';
 import styled from 'styled-components';
 import CloseIcon from '@/icons/close/index';
@@ -16,6 +22,7 @@ import Content5 from './assets/1003.png';
 import Content6 from './assets/1004.png';
 import Content7 from './assets/1005.png';
 import Loading from './assets/loading.png';
+import { sleep } from '@/utils/common.js';
 
 const ImgArr = [
   Content1,
@@ -24,7 +31,7 @@ const ImgArr = [
   Content4,
   Content5,
   Content6,
-  Content7
+  Content7,
 ];
 
 const WakeButtonList = ({ buttonList }) => {
@@ -40,51 +47,42 @@ const WakeButtonList = ({ buttonList }) => {
   };
   return (
     <>
+      <LoadingDialog
+        open={loading}
+        text="Opening the Mystery box"
+      ></LoadingDialog>
       <Div
         className="btnDialag"
         open={modalVisible}
         headerStyle={{ width: 680 }}
         header={
-          loading ? (
-            <></>
-          ) : (
-            <Header>
-              <img className="btnDialogTitle" src={Title} alt="" />
-              <CloseIcon onClick={onCancel} className="close-icon" />
-            </Header>
-          )
+          <Header>
+            <img className="btnDialogTitle" src={Title} alt="" />
+            <CloseIcon onClick={onCancel} className="close-icon" />
+          </Header>
         }
         footer={
-          loading ? (
-            <></>
-          ) : (
-            <Footer>
-              <Button height="28px" width="132px" onClick={onConfirm}>
-                conform
-              </Button>
-              <div className="footerBtnText">{'View on Polygon >>'}</div>
-            </Footer>
-          )
-        }>
-        {loading ? (
-          <LoaddingContent>
-            <img src={Loading} alt="" />
-            <div>Opening the Mystery box</div>
-          </LoaddingContent>
-        ) : (
-          <DialogContent>
-            {ImgArr.map((ele, idx) => (
-              <img className="contentItem" src={ele} alt="" />
-            ))}
-          </DialogContent>
-        )}
+          <Footer>
+            <Button height="28px" width="132px" onClick={onConfirm}>
+              conform
+            </Button>
+            <div className="footerBtnText">{'View on Polygon >>'}</div>
+          </Footer>
+        }
+      >
+        <DialogContent>
+          {ImgArr.map((ele, idx) => (
+            <img className="contentItem" src={ele} alt="" />
+          ))}
+        </DialogContent>
       </Div>
       <div
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          marginTop: '35px'
-        }}>
+          marginTop: '35px',
+        }}
+      >
         {buttonList.map((item, index) => (
           <WakeButton
             type={item.theme}
@@ -92,10 +90,10 @@ const WakeButtonList = ({ buttonList }) => {
             key={index}
             click={() => {
               setLoading(true);
-              setModalVisible(true);
-
               setTimeout(() => {
                 setLoading(false);
+                congratulationAnimate();
+                setModalVisible(true);
               }, 2000);
             }}
           />
@@ -106,7 +104,7 @@ const WakeButtonList = ({ buttonList }) => {
 };
 
 WakeButtonList.propTypes = {
-  buttonList: PropTypes.array.isRequired
+  buttonList: PropTypes.array.isRequired,
 };
 
 export default WakeButtonList;

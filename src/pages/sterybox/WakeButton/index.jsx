@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Rectangle1 from './asstes/Rectangle1.png';
 import Rectangle2 from './asstes/Rectangle2.png';
@@ -12,7 +11,7 @@ let themObj = {
   yellow: Rectangle1,
   orange: Rectangle2,
   blueq: Rectangle3,
-  blues: Rectangle4
+  blues: Rectangle4,
 };
 
 const WakeButon = ({ type, title, click }) => {
@@ -31,13 +30,12 @@ const WakeButon = ({ type, title, click }) => {
         cursor: 'pointer',
         textAlign: 'center',
         alignItems: 'center',
-        lineHeight: '32px'
-      }}>
+        lineHeight: '32px',
+      }}
+    >
       {title}
     </div>
   );
 };
-
-WakeButon.propTypes = {};
 
 export default WakeButon;

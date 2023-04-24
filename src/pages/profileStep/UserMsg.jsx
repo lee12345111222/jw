@@ -8,8 +8,13 @@ import Polygon from './assets/polygan.png';
 import Twitter from './assets/twitter.png';
 import Dc from './assets/dc.png';
 import useHistory from '@/hooks/useHistory';
+import { useSelector } from 'react-redux';
 
 export const UserMsg = memo(() => {
+  const name = useSelector(state => {
+    //console.log(state, 'state');
+    return state.user.name;
+  });
   const history = useHistory();
   return (
     <div className={styles['card-user-content']}>
@@ -31,7 +36,7 @@ export const UserMsg = memo(() => {
       </div>
       <div className={styles['user-edit']}>
         <BorderedBtn width="88px" onClick={() => history.push('/profileEdit')}>
-          Edit1
+          Edit
         </BorderedBtn>
       </div>
     </div>
